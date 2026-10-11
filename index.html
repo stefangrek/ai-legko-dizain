@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Три варианта дизайна — ИИ — легко</title>
+<style>
+  :root { --bg: #f3f4f6; --fg: #111215; --fg2: #464a52; --card: #fff; --line: #d7dae0; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #0e0f12; --fg: #f2f3f5; --fg2: #b4b7be; --card: #17181c; --line: #2e3036; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 18px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 1100px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: clamp(30px, 5vw, 48px); line-height: 1.05; margin: 0 0 12px; letter-spacing: -0.02em; }
+  p { margin: 0 0 12px; color: var(--fg2); max-width: 40em; }
+  ul { list-style: none; padding: 0; margin: 28px 0 0; display: grid; gap: 16px; }
+  li { background: var(--card); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+  li img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; object-position: top; background: var(--line); }
+  li div { padding: 16px 18px 20px; }
+  h2 { margin: 0 0 6px; font-size: 24px; }
+  a { color: var(--fg); font-weight: 600; text-underline-offset: 4px; display: inline-flex; min-height: 44px; align-items: center; margin-right: 18px; }
+  @media (min-width: 900px) { ul { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Варианты дизайна</h1>
+  <p>Новые три варианта — на раскладке «Светлого продукта», которая вам понравилась, но в другой гамме. Ниже — прежние три для сравнения. Откройте с телефона и с компьютера главную и страницу «Нейросети для автосервиса».</p>
+  <h2 style="margin-top:28px">Новые: раскладка «Светлого продукта»</h2>
+  <ul>
+    <li><img src="d-claude/shots/cover.jpg" alt=""><div><h2>D. Как Claude</h2><p>Тёплая бумага, чернила и коралловый акцент, заголовки с засечками — сдержанно и «умно».</p><a href="d-claude/index.html">Главная</a><a href="d-claude/nisha.html">Автосервис</a></div></li>
+    <li><img src="e-code/shots/cover.jpg" alt=""><div><h2>E. Код</h2><p>Как среда разработчика: тёмный редактор, подсветка, строка-терминал.</p><a href="e-code/index.html">Главная</a><a href="e-code/nisha.html">Автосервис</a></div></li>
+    <li><img src="f-future/shots/cover.jpg" alt=""><div><h2>F. Будущее</h2><p>Технологии будущего: свет индикаторов, приборные шкалы, данные.</p><a href="f-future/index.html">Главная</a><a href="f-future/nisha.html">Автосервис</a></div></li>
+  </ul>
+  <h2 style="margin-top:40px">Прежние варианты</h2>
+  <ul>
+    <li><img src="a-gallery/shots/cover.jpg" alt=""><div><h2>A. Галерея</h2><p>Тёмный кабинет ИИ-студии: результаты крупно, во всю ширину.</p><a href="a-gallery/index.html">Главная</a><a href="a-gallery/nisha.html">Автосервис</a></div></li>
+    <li><img src="b-light/shots/cover.jpg" alt=""><div><h2>B. Светлый продукт</h2><p>Светлый и воздушный, у каждой ниши свой цвет — как Apple, Notion, Canva.</p><a href="b-light/index.html">Главная</a><a href="b-light/nisha.html">Автосервис</a></div></li>
+    <li><img src="c-journal/shots/cover.jpg" alt=""><div><h2>C. Журнал</h2><p>Редакционная вёрстка, заголовки с засечками, пометки «от руки».</p><a href="c-journal/index.html">Главная</a><a href="c-journal/nisha.html">Автосервис</a></div></li>
+  </ul>
+</main>
+</body>
+</html>

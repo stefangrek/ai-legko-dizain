@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Нейросети для автосервиса — ИИ — легко</title>
+<meta name="description" content="Запись, ответы «сколько стоит» и отзывы — пока вы под машиной. Готовые задания от 0,50 ₽ и инструкции.">
+<link rel="preload" href="fonts/unbounded-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/golos-text-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 10.5 12 4l8 6.5V20h-5.5v-6h-5v6H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+  <symbol id="i-tasks" viewBox="0 0 24 24"><path d="M4 4h7v9H4zM13 4h7v5h-7zM13 11h7v9h-7zM4 15h7v5H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-works" viewBox="0 0 24 24"><path d="M3.5 5h17v14h-17z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m3.5 16 5-5 4 4 3-3 5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="15.5" cy="9" r="1.6" fill="currentColor"/></symbol>
+  <symbol id="i-chip" viewBox="0 0 24 24"><path d="M7 7h10v10H7z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5C6.5 4.5 9.5 4.5 12 6c2.5-1.5 5.5-1.5 8-.5V19c-2.5-1-5.5-1-8 .5-2.5-1.5-5.5-1.5-8-.5z M12 6v13.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-rub" viewBox="0 0 24 24"><path d="M8 20V4h5.5a4 4 0 0 1 0 8H6M6 16h9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z" fill="currentColor"/></symbol>
+</svg>
+
+<a class="skip" href="#content">Перейти к содержанию</a>
+
+<div class="shell">
+  <aside class="rail" aria-label="Разделы">
+    <a class="brand" href="index.html">ИИ<span class="brand__dash">—</span>легко</a>
+    <a class="btn btn--brass rail__create" href="index.html#ask"><svg aria-hidden="true"><use href="#i-plus"/></svg>Создать</a>
+    <nav class="rail__nav" aria-label="Кабинет">
+      <a href="index.html"><svg aria-hidden="true"><use href="#i-home"/></svg>Главная</a>
+      <a href="index.html#ask"><svg aria-hidden="true"><use href="#i-chat"/></svg>Чат</a>
+      <a href="index.html#zadaniya"><svg aria-hidden="true"><use href="#i-tasks"/></svg>Задания</a>
+      <a href="#"><svg aria-hidden="true"><use href="#i-works"/></svg>Работы</a>
+      <div class="rail__sep" role="presentation"></div>
+      <a href="index.html#neiroseti"><svg aria-hidden="true"><use href="#i-chip"/></svg>Нейросети</a>
+      <a href="index.html#uchitsya"><svg aria-hidden="true"><use href="#i-book"/></svg>Учиться</a>
+      <a href="index.html#ceny"><svg aria-hidden="true"><use href="#i-rub"/></svg>Цены</a>
+    </nav>
+    <div class="rail__foot">
+      <p class="rail__gift">После входа на&nbsp;счёте&nbsp;— 30&nbsp;₽ в&nbsp;подарок</p>
+      <a class="btn btn--line" href="#">Войти</a>
+    </div>
+  </aside>
+
+  <div>
+    <header class="topbar">
+      <a class="brand" href="index.html">ИИ<span class="brand__dash">—</span>легко</a>
+      <a class="btn btn--line topbar__login" href="#">Войти</a>
+    </header>
+
+    <main class="main" id="content">
+      <div class="wrap">
+        <nav class="crumbs" aria-label="Вы здесь">
+          <ol>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="index.html#h-delo">Ремонт, стройка, авто</a></li>
+            <li aria-current="page">Автосервис</li>
+          </ol>
+        </nav>
+        <header class="niche-hero">
+          <h1 class="h1">Нейросети для&nbsp;автосервиса</h1>
+          <p class="lead">Запись, ответы «сколько стоит» и&nbsp;отзывы&nbsp;— пока вы под машиной.</p>
+          <p class="niche-facts"><span>4 задания можно сделать сейчас</span><span>6 инструкций</span><span>от&nbsp;0,50&nbsp;₽ за&nbsp;работу</span></p>
+        </header>
+      </div>
+
+      <!-- Сделать сейчас -->
+      <section class="section section--flush" aria-labelledby="h-now">
+        <div class="wrap">
+          <div class="section__head">
+            <h2 class="h2" id="h-now">Сделать прямо сейчас</h2>
+            <p class="lead">Нажмите&nbsp;— откроется задание с&nbsp;уже написанным запросом. Останется поправить пару слов.</p>
+          </div>
+          <div class="now">
+            <article class="job job--big job--a">
+              <div class="job__view">
+                <img src="../assets/gruppa-stroyka.webp" alt="Стена мастерской с инструментами" loading="lazy" width="960" height="720">
+                <span class="work__tag" style="position:absolute">Пример</span>
+                <div class="poster" aria-hidden="true">
+                  <p class="poster__big">Шиномонтаж со&nbsp;скидкой 20&nbsp;%</p>
+                  <p class="poster__small">Всю осень по&nbsp;будням. Запись по&nbsp;телефону</p>
+                </div>
+              </div>
+              <div class="job__plaque">
+                <h3 class="job__title">Картинка для акции</h3>
+                <p class="job__need">Нужно: фото мастерской и&nbsp;текст акции</p>
+                <a class="btn btn--brass" href="#">Сделать за&nbsp;9&nbsp;₽</a>
+              </div>
+            </article>
+
+            <article class="job job--b">
+              <div class="job__view chat" aria-label="Пример переписки">
+                <p class="chat__msg chat__msg--me"><span class="chat__who">Вы</span>Напишите вежливый ответ на&nbsp;отзыв клиента автосервиса: «Ждал машину два дня вместо одного»</p>
+                <p class="chat__msg chat__msg--ai"><span class="chat__who">Нейросеть</span><span class="chat__done">Готово:</span> вежливый ответ и&nbsp;приглашение приехать снова</p>
+              </div>
+              <div class="job__plaque">
+                <h3 class="job__title">Ответ на&nbsp;отзыв</h3>
+                <p class="job__need">Нужно: текст отзыва</p>
+                <a class="btn btn--brass" href="#">Сделать за&nbsp;0,50&nbsp;₽</a>
+              </div>
+            </article>
+
+            <article class="job job--c">
+              <div class="job__view chat" aria-label="Пример переписки">
+                <p class="chat__msg chat__msg--me"><span class="chat__who">Вы</span>Объясните простыми словами, почему стучит подвеска и&nbsp;сколько стоит ремонт</p>
+                <p class="chat__msg chat__msg--ai"><span class="chat__who">Нейросеть</span><span class="chat__done">Готово:</span> объяснение без терминов, которое можно отправить клиенту</p>
+              </div>
+              <div class="job__plaque">
+                <h3 class="job__title">Объяснить клиенту поломку</h3>
+                <p class="job__need">Нужно: что сломалось</p>
+                <a class="btn btn--brass" href="#">Сделать за&nbsp;0,50&nbsp;₽</a>
+              </div>
+            </article>
+
+            <article class="job job--d">
+              <div class="job__view">
+                <img src="../assets/kadr-iz-filma.webp" alt="Салон старого фургона" loading="lazy" width="960" height="1200">
+                <span class="work__tag" style="position:absolute">Пример</span>
+                <span class="play" aria-hidden="true"><svg><use href="#i-play"/></svg></span>
+              </div>
+              <div class="job__plaque">
+                <h3 class="job__title">Ролик без съёмки</h3>
+                <p class="job__need">Нужно: пара предложений о&nbsp;том, что показать</p>
+                <a class="btn btn--brass" href="#">Сделать за&nbsp;70&nbsp;₽</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Ещё -->
+      <section class="section" aria-labelledby="h-more">
+        <div class="wrap">
+          <div class="section__head">
+            <h2 class="h2" id="h-more">Что ещё можно сделать</h2>
+            <p class="lead">Вещи, за&nbsp;которые обычно платят исполнителю. С&nbsp;инструкцией их можно сделать самому за&nbsp;вечер.</p>
+          </div>
+          <ul class="more-rows">
+            <li class="more-row">
+              <div><h3>Бот записи на&nbsp;ремонт</h3><p>Принимает заявки ночью и&nbsp;в&nbsp;выходные, спрашивает марку и&nbsp;что случилось.</p></div>
+              <p class="more-row__cost">У&nbsp;исполнителей: <b>15–50 тыс.&nbsp;₽</b></p>
+              <a class="btn btn--line" href="#">Пошаговая инструкция</a>
+            </li>
+            <li class="more-row">
+              <div><h3>Калькулятор ТО</h3><p>Клиент выбирает машину и&nbsp;пробег&nbsp;— видит примерную цену и&nbsp;записывается.</p></div>
+              <p class="more-row__cost">У&nbsp;исполнителей: <b>5–20 тыс.&nbsp;₽</b></p>
+              <a class="btn btn--line" href="#">Открыть инструкцию</a>
+            </li>
+            <li class="more-row">
+              <div><h3>Сайт с&nbsp;услугами</h3><p>Одна страница: услуги, цены-ориентиры, адрес и&nbsp;кнопка записи.</p></div>
+              <p class="more-row__cost">У&nbsp;исполнителей: <b>10–30 тыс.&nbsp;₽</b></p>
+              <a class="btn btn--line" href="#">Открыть инструкцию</a>
+            </li>
+            <li class="more-row">
+              <div><h3>Советы водителям в&nbsp;роликах</h3><p>Короткие ролики «как проверить масло» и&nbsp;«когда менять резину»&nbsp;— без съёмки.</p></div>
+              <p class="more-row__cost">Программа <b>«Рилс каждый день»</b>, 14 дней</p>
+              <a class="btn btn--line" href="#">Открыть программу</a>
+            </li>
+          </ul>
+          <p class="honest__note">Цены исполнителей&nbsp;— ориентир.</p>
+        </div>
+      </section>
+
+      <!-- Научиться -->
+      <section class="section" aria-labelledby="h-learn">
+        <div class="wrap">
+          <div class="section__head">
+            <h2 class="h2" id="h-learn">Научиться самому</h2>
+            <p class="lead">Инструкции по&nbsp;шагам, с&nbsp;готовыми запросами для автосервиса.</p>
+          </div>
+          <ul class="lessons">
+            <li><a href="#">Отвечать на&nbsp;отзывы на&nbsp;картах за&nbsp;5 минут в&nbsp;день</a><span>Сложность: легко</span></li>
+            <li><a href="#">Объяснять клиенту поломку простыми словами</a><span>Сложность: легко</span></li>
+            <li><a href="#">Картинки для акций и&nbsp;сезонных скидок</a><span>Сложность: легко</span></li>
+            <li><a href="#">Бот записи на&nbsp;ремонт в&nbsp;мессенджере</a><span>Сложность: средне</span></li>
+            <li><a href="#">Калькулятор стоимости ТО на&nbsp;сайте</a><span>Сложность: средне</span></li>
+            <li><a href="#">Сайт автосервиса за&nbsp;вечер</a><span>Сложность: сложно</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Похожие -->
+      <section class="section" aria-labelledby="h-similar">
+        <div class="wrap">
+          <div class="section__head"><h2 class="h2" id="h-similar">Похожие дела</h2></div>
+          <ul class="similar">
+            <li><a href="#"><img src="../assets/remont-po-foto.webp" alt="" loading="lazy" width="960" height="1200"><span>Ремонт и&nbsp;отделка</span></a></li>
+            <li><a href="#"><img src="../assets/gruppa-nedvizhimost.webp" alt="" loading="lazy" width="960" height="720"><span>Дома и&nbsp;бани</span></a></li>
+            <li><a href="#"><img src="../assets/gruppa-torgovlya.webp" alt="" loading="lazy" width="960" height="720"><span>Переезды и&nbsp;грузоперевозки</span></a></li>
+          </ul>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="wrap">
+          <ul>
+            <li><a href="index.html#ceny">Цены</a></li>
+            <li><a href="#">Вопросы и&nbsp;ответы</a></li>
+            <li><a href="#">Политика данных</a></li>
+            <li><a href="#">Контакты</a></li>
+          </ul>
+          <p>© 2026 ИИ&nbsp;— легко. Не&nbsp;обещаем доходов: нейросети экономят время, а&nbsp;решения за&nbsp;вами.</p>
+        </div>
+      </footer>
+    </main>
+  </div>
+</div>
+
+<nav class="tabbar" aria-label="Кабинет">
+  <a href="index.html"><svg aria-hidden="true"><use href="#i-home"/></svg>Главная</a>
+  <a href="index.html#ask"><svg aria-hidden="true"><use href="#i-chat"/></svg>Чат</a>
+  <a class="tabbar__create" href="index.html#ask"><span class="tabbar__plus"><svg aria-hidden="true"><use href="#i-plus"/></svg></span>Создать</a>
+  <a href="index.html#zadaniya"><svg aria-hidden="true"><use href="#i-tasks"/></svg>Задания</a>
+  <a href="#"><svg aria-hidden="true"><use href="#i-works"/></svg>Работы</a>
+</nav>
+</body>
+</html>

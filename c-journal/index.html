@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ИИ — легко: нейросети для вашего дела</title>
+<meta name="description" content="Пошаговые инструкции и готовые задания по нейросетям. Цена в рублях видна до запуска.">
+<link rel="preload" href="fonts/source-serif-4-cyrillic-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/golos-text-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-home" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M3.6 11.2 12 4.1l8.5 7.2M5.8 9.6v9.7c0 .5.4.8.8.8h3.7v-5.6h3.5v5.6h3.7c.5 0 .8-.3.8-.8V9.5"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4.2 6.3c0-1.2 1-2.1 2.2-2.1h11.3c1.2 0 2.1.9 2.1 2.1v7.9c0 1.2-1 2.1-2.1 2.1H11l-4.6 3.6v-3.6h0c-1.2 0-2.2-.9-2.2-2.1z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M8.3 9.1h7.4M8.3 12.2h4.6"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M12.1 4.8v14.5M4.8 12h14.5"/></symbol>
+    <symbol id="i-tasks" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4.1 5.9c0-.9.8-1.7 1.7-1.7h12.4c.9 0 1.7.8 1.7 1.7v12.3c0 .9-.8 1.7-1.7 1.7H5.8c-.9 0-1.7-.8-1.7-1.7z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="m4.4 16.3 4.4-4.5 3.4 3.3 2.3-2.2 5.1 4.6"/><circle cx="15.4" cy="8.6" r="1.6" fill="currentColor"/></symbol>
+    <symbol id="i-works" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M3.9 7.4c0-.9.7-1.6 1.6-1.6h4l1.9 2.1h7.1c.9 0 1.6.7 1.6 1.6v8.4c0 .9-.7 1.6-1.6 1.6h-13c-.9 0-1.6-.7-1.6-1.6z"/></symbol>
+    <symbol id="i-tools" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="m4.6 19.4 9.9-9.9M13.1 5.2l.6 2.1 2.1.6-2.1.6-.6 2.1-.6-2.1-2.1-.6 2.1-.6zM18.6 11.1l.4 1.4 1.4.4-1.4.4-.4 1.4-.4-1.4-1.4-.4 1.4-.4z"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 6.6c-1.9-1.5-4.6-2-7.7-1.8v13.1c3.1-.2 5.8.3 7.7 1.8 1.9-1.5 4.6-2 7.7-1.8V4.8c-3.1-.2-5.8.3-7.7 1.8zM12 6.6v13"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4.3 6.9c0-.9.8-1.7 1.7-1.7h12c.9 0 1.7.8 1.7 1.7v11.4c0 .9-.8 1.7-1.7 1.7H6c-.9 0-1.7-.8-1.7-1.7zM4.4 9.9h15.2M8.4 3.6v3.1M15.6 3.6v3.1"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="m8.6 14.6 2 1.8 4.6-4.3"/></symbol>
+    <symbol id="i-rub" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M8.6 19.6V4.6h4.6c2.4 0 4 1.5 4 3.8s-1.6 3.9-4 3.9H6.6M6.6 15.7h7.6"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4.4 4.6h6.1v6.1H4.4zM13.6 4.4h6v6.2h-6zM4.5 13.5h6v6.1h-6zM13.5 13.6h6.1v6h-6.1z"/></symbol>
+    <symbol id="i-net" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 3.9c.5 4.4 3.6 7.6 8.1 8.1-4.5.5-7.6 3.7-8.1 8.1-.5-4.4-3.6-7.6-8.1-8.1 4.5-.5 7.6-3.7 8.1-8.1z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M10.6 17.4a6.7 6.7 0 1 0 0-13.4 6.7 6.7 0 0 0 0 13.4zM15.5 15.6l4.6 4.5"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" d="M12 3.8c1.6 0 2.8 1.2 2.8 2.8v5.1c0 1.6-1.2 2.8-2.8 2.8s-2.8-1.2-2.8-2.8V6.6c0-1.6 1.2-2.8 2.8-2.8zM6.3 11.3c0 3.2 2.5 5.8 5.7 5.8s5.7-2.6 5.7-5.8M12 17.2v3.1"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M12 19.4V5M6 10.8 12 4.7l6.1 6.1"/></symbol>
+    <symbol id="i-lr" viewBox="0 0 28 28"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M10.5 8.5 5 14l5.5 5.5M17.5 8.5 23 14l-5.5 5.5"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14.8 5.5 8.3 12l6.5 6.5"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9.2 5.5 15.7 12l-6.5 6.5"/></symbol>
+    <symbol id="i-open" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 5.2v13.6M5.2 12h13.6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="m4.8 12.6 4.4 4.1 10-10.1"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#main">К содержанию</a>
+
+<aside class="rail" aria-label="Разделы">
+  <a class="logo" href="index.html">ИИ — легко</a>
+  <a class="btn btn--wide" href="#ask"><svg aria-hidden="true"><use href="#i-plus"/></svg>Создать</a>
+  <nav aria-label="Оглавление">
+    <ul class="toc">
+      <li><a href="index.html" aria-current="page"><svg aria-hidden="true"><use href="#i-home"/></svg><span class="t">Главная</span><span></span></a></li>
+      <li><a href="#ask"><svg aria-hidden="true"><use href="#i-chat"/></svg><span class="t">Чат с нейросетью</span><span></span></a></li>
+      <li><a href="#tasks"><svg aria-hidden="true"><use href="#i-tasks"/></svg><span class="t">Задания</span><span class="n">28</span></a></li>
+      <li><a href="#tools"><svg aria-hidden="true"><use href="#i-tools"/></svg><span class="t">Инструменты</span><span></span></a></li>
+      <li><a href="#"><svg aria-hidden="true"><use href="#i-works"/></svg><span class="t">Мои работы</span><span></span></a></li>
+    </ul>
+    <p class="toc__group">Учиться</p>
+    <ul class="toc">
+      <li><a href="#learn"><svg aria-hidden="true"><use href="#i-book"/></svg><span class="t">Инструкции</span><span></span></a></li>
+      <li><a href="#learn"><svg aria-hidden="true"><use href="#i-cal"/></svg><span class="t">Программы</span><span></span></a></li>
+      <li><a href="#top"><svg aria-hidden="true"><use href="#i-grid"/></svg><span class="t">Виды дел</span><span class="n">34</span></a></li>
+    </ul>
+    <p class="toc__group">Справка</p>
+    <ul class="toc">
+      <li><a href="#models"><svg aria-hidden="true"><use href="#i-net"/></svg><span class="t">Нейросети</span><span class="n">24</span></a></li>
+      <li><a href="#prices"><svg aria-hidden="true"><use href="#i-rub"/></svg><span class="t">Цены</span><span></span></a></li>
+    </ul>
+  </nav>
+  <div class="rail__foot">
+    <p class="small muted">После входа — 30 ₽ в подарок на первые работы.</p>
+    <a class="btn btn--line btn--wide" href="#">Войти</a>
+  </div>
+</aside>
+
+<header class="topbar">
+  <a class="logo" href="index.html">ИИ — легко</a>
+  <div class="wallet"><a class="btn btn--line" href="#">Войти</a></div>
+</header>
+
+<div class="page">
+<main id="main">
+
+  <!-- Обложка: вопрос и оглавление дел -->
+  <section class="cover" id="top" aria-labelledby="h-top">
+    <div class="wrap">
+      <h1 class="h1" id="h-top">Чем вы занимаетесь?</h1>
+      <div class="cover__grid">
+        <div class="cover__head">
+          <p class="lead">Выберите своё дело — покажем, что нейросеть сделает для него уже сегодня и сколько это стоит в рублях.</p>
+          <form class="search" role="search" onsubmit="return false">
+            <label class="sr" for="q">Найти своё дело</label>
+            <svg aria-hidden="true"><use href="#i-search"/></svg>
+            <input id="q" type="search" placeholder="Например, кондитер" autocomplete="off">
+          </form>
+        </div>
+        <div class="cover__aside rail-only">
+          <p class="note" style="color:var(--ink);font-size:1.375rem">Инструкции к заданиям — бесплатно. Работа нейросети — от 0,50 ₽, цена видна до запуска.</p>
+          <p class="small muted" style="margin-top:12px">После входа — 30 ₽ в подарок: это 60 ответов или три картинки.</p>
+        </div>
+      </div>
+
+      <nav class="groups" aria-label="Виды дел" id="groups">
+        <a class="group" href="nisha.html"><span class="ph"><img src="../assets/gruppa-uslugi.webp" alt="" width="960" height="720"></span><span><span class="group__t">Красота и услуги</span><span class="group__ex">Парикмахер, маникюр, массаж, химчистка</span></span></a>
+        <a class="group" href="nisha.html"><span class="ph"><img src="../assets/gruppa-torgovlya.webp" alt="" width="960" height="720"></span><span><span class="group__t">Торговля и маркетплейсы</span><span class="group__ex">Селлер на Wildberries и Ozon, магазин у дома</span></span></a>
+        <a class="group" href="nisha.html"><span class="ph"><img src="../assets/gruppa-eda.webp" alt="" width="960" height="720"></span><span><span class="group__t">Еда</span><span class="group__ex">Кондитер, кафе, доставка, домашняя выпечка</span></span></a>
+        <a class="group" href="nisha.html"><span class="ph"><img src="../assets/gruppa-stroyka.webp" alt="" width="960" height="720"></span><span><span class="group__t">Ремонт, стройка, авто</span><span class="group__ex">Автосервис, отделка, бани, грузоперевозки</span></span></a>
+        <a class="group" href="nisha.html"><span class="ph"><img src="../assets/gruppa-nedvizhimost.webp" alt="" width="960" height="720"></span><span><span class="group__t">Недвижимость</span><span class="group__ex">Риелтор, посуточная аренда, управляющая компания</span></span></a>
+        <a class="group" href="nisha.html"><span class="ph"><img src="../assets/gruppa-zdorovie-ucheba.webp" alt="" width="960" height="720"></span><span><span class="group__t">Здоровье, дети, учёба</span><span class="group__ex">Репетитор, тренер, детский центр, психолог</span></span></a>
+        <a class="group" href="nisha.html"><span class="ph"><img src="../assets/gruppa-ofis.webp" alt="" width="960" height="720"></span><span><span class="group__t">Офис, продажи, маркетинг</span><span class="group__ex">Менеджер, бухгалтер, маркетолог, кадровик</span></span></a>
+        <a class="group" href="nisha.html"><span class="ph"><img src="../assets/gruppa-dlya-sebya.webp" alt="" width="960" height="720"></span><span><span class="group__t">Для себя и семьи</span><span class="group__ex">Открытки, старые фото, песня, письмо</span></span></a>
+        <p class="groups__empty" id="groups-empty" hidden>Такого дела пока нет в списке. Напишите его в строку запроса ниже — нейросеть подскажет, с чего начать.</p>
+      </nav>
+
+      <div class="facts" role="list" aria-label="Что есть внутри">
+        <p class="fact" role="listitem"><b>34</b><span>вида дел с готовыми инструкциями</span></p>
+        <p class="fact" role="listitem"><b>28</b><span>готовых заданий: одно фото — результат</span></p>
+        <p class="fact" role="listitem"><b>24</b><span>нейросети в одном окне</span></p>
+        <p class="fact" role="listitem"><b class="num">0,50 ₽</b><span>самая дешёвая работа — ответ на вопрос</span></p>
+      </div>
+      <p class="gift phone-only">После входа — <mark>30 ₽ в подарок</mark>: это 60 ответов или три картинки.</p>
+    </div>
+  </section>
+
+  <!-- Строка запроса с пометками ручкой: единственное движение страницы -->
+  <section class="sec" id="ask" aria-labelledby="h-ask">
+    <div class="wrap split">
+      <div class="side">
+        <h2 class="h2" id="h-ask">Или спросите своими словами</h2>
+        <p>Напишите или скажите, что нужно: ответ клиенту, пост, картинку, песню. Цена появится до отправки — без сюрпризов.</p>
+      </div>
+      <div>
+        <div class="draw" id="ask-draw">
+          <div class="composer">
+            <div class="seg" role="tablist" aria-label="Что сделать">
+              <button role="tab" aria-selected="true" data-ph="Например: напишите вежливый ответ на отзыв, где клиент жалуется на долгое ожидание" data-price="≈ 0,50 ₽ за ответ">Написать</button>
+              <button role="tab" aria-selected="false" data-ph="Например: открытка на юбилей маме, осенние листья и надпись «С днём рождения»" data-price="≈ 9 ₽ за картинку">Картинка</button>
+              <button role="tab" aria-selected="false" data-ph="Например: оживите старое фото бабушки, пусть она улыбнётся" data-price="≈ 40 ₽ за ролик">Видео</button>
+              <button role="tab" aria-selected="false" data-ph="Например: весёлая песня на день рождения Ольге, ей 50, любит дачу" data-price="≈ 32 ₽ за песню">Песня</button>
+            </div>
+            <label class="sr" for="prompt">Ваш запрос</label>
+            <textarea id="prompt" placeholder="Например: напишите вежливый ответ на отзыв, где клиент жалуется на долгое ожидание"></textarea>
+            <div class="composer__bar">
+              <span class="ann">
+                <button class="icon-btn" type="button" aria-label="Сказать голосом"><svg aria-hidden="true"><use href="#i-mic"/></svg></button>
+                <svg class="ann__ring" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path class="ink-line" pathLength="1" style="--d:.9s" d="M18 70 C 4 42, 22 8, 56 7 C 88 6, 98 36, 92 62 C 86 90, 50 98, 26 88 C 10 80, 6 56, 16 38"/></svg>
+              </span>
+              <span class="ann">
+                <span class="composer__price" id="price" aria-live="polite">≈ 0,50 ₽ за ответ</span>
+                <svg class="ann__ring" viewBox="0 0 200 60" preserveAspectRatio="none" aria-hidden="true"><path class="ink-line" pathLength="1" style="--d:0s" d="M22 40 C 8 22, 52 6, 104 5 C 160 4, 196 14, 194 31 C 192 50, 140 57, 92 56 C 44 55, 4 47, 8 31 C 11 20, 34 12, 62 9"/></svg>
+              </span>
+              <button class="icon-btn icon-btn--ink send" type="button" aria-label="Отправить"><svg aria-hidden="true"><use href="#i-send"/></svg></button>
+            </div>
+          </div>
+          <div class="ask__notes" aria-hidden="true">
+            <svg style="left:108px;top:2px;width:44px;height:46px" viewBox="0 0 44 46"><path class="ink-line" pathLength="1" style="--d:.45s" d="M40 40 C 26 38, 16 28, 14 6 M6 15 C 9 11, 12 7, 14 4 C 17 8, 20 11, 23 14"/></svg>
+            <p class="note" style="left:156px;top:22px;--d:.7s">цена видна<br>до отправки</p>
+            <svg style="left:24px;top:4px;width:30px;height:84px" viewBox="0 0 30 84"><path class="ink-line" pathLength="1" style="--d:1.25s" d="M12 82 C 18 62, 20 32, 15 4 M7 13 C 10 10, 13 6, 15 3 C 18 7, 20 10, 23 13"/></svg>
+            <p class="note" style="left:52px;top:88px;--d:1.5s">можно сказать голосом</p>
+          </div>
+        </div>
+        <div class="models-row">
+          <p class="models-row__t">Отвечают нейросети</p>
+          <span class="brand brand--word">OpenAI</span>
+          <span class="brand"><img src="../assets/anthropic.svg" alt="" width="22" height="22">Anthropic</span>
+          <span class="brand"><img src="../assets/google.svg" alt="" width="22" height="22">Google</span>
+          <span class="brand"><img src="../assets/deepseek.svg" alt="" width="22" height="22">DeepSeek</span>
+          <span class="brand"><img src="../assets/x.svg" alt="" width="22" height="22">xAI</span>
+          <span class="brand"><img src="../assets/perplexity.svg" alt="" width="22" height="22">Perplexity</span>
+          <span class="brand"><img src="../assets/bytedance.svg" alt="" width="22" height="22">ByteDance</span>
+          <span class="brand"><img src="../assets/kuaishou.svg" alt="" width="22" height="22">Kuaishou</span>
+          <span class="brand"><img src="../assets/minimax.svg" alt="" width="22" height="22">MiniMax</span>
+          <span class="brand"><img src="../assets/elevenlabs.svg" alt="" width="22" height="22">ElevenLabs</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Готовые задания -->
+  <section class="sec" id="tasks" aria-labelledby="h-tasks">
+    <div class="wrap">
+      <div class="side" style="max-width:760px">
+        <h2 class="h2" id="h-tasks">Одно фото — готовый результат</h2>
+        <p>Загрузите своё фото, остальное сделает нейросеть. Цена — за готовую работу, видна до запуска.</p>
+      </div>
+      <div class="tasks__top">
+        <a class="task" href="#">
+          <figure>
+            <div class="ph ph--45">
+              <img src="../assets/kartochka-s-preimushchestvami.webp" alt="Баночка крема в руке, поверх — белая плашка с названием и тремя преимуществами" width="960" height="1200">
+              <div class="overlay-card" aria-hidden="true"><b>Крем для рук</b><ul><li>Впитывается за минуту</li><li>Без запаха</li><li>50 мл, хватит на месяц</li></ul></div>
+              <span class="stamp">фото-пример</span>
+            </div>
+            <figcaption>
+              <div class="cap"><span class="cap__name">Карточка с преимуществами</span><span class="cap__price">30 ₽</span></div>
+              <p class="cap__what">Нужно: одно фото товара и три слова о нём. Готовая карточка — для Ozon, Wildberries или витрины.</p>
+            </figcaption>
+          </figure>
+        </a>
+        <div class="task__quad">
+          <a class="task" href="#"><figure><div class="ph ph--45"><img src="../assets/tovar-na-belom-fone.webp" alt="Красные туфли на чистом белом фоне" width="960" height="1200" loading="lazy"><span class="stamp">фото-пример</span></div><figcaption class="cap"><span class="cap__name">Товар на белом фоне</span><span class="cap__price">9 ₽</span></figcaption></figure></a>
+          <a class="task" href="#"><figure><div class="ph ph--45"><img src="../assets/tovar-v-interere.webp" alt="Кружка с ёлками на деревянном столе в кафе" width="960" height="1200" loading="lazy"><span class="stamp">фото-пример</span></div><figcaption class="cap"><span class="cap__name">Товар в интерьере</span><span class="cap__price">9 ₽</span></figcaption></figure></a>
+          <a class="task" href="#"><figure><div class="ph ph--45"><img src="../assets/odezhda-na-modeli.webp" alt="Девушка в светлом свитере и шляпой в руке" width="960" height="1200" loading="lazy"><span class="stamp">фото-пример</span></div><figcaption class="cap"><span class="cap__name">Одежда на модели</span><span class="cap__price">9 ₽</span></figcaption></figure></a>
+          <a class="task" href="#"><figure><div class="ph ph--45"><img src="../assets/oblozhka-dlya-youtube.webp" alt="Смеющаяся женщина с книгой у кирпичной стены" width="960" height="1200" loading="lazy"><span class="stamp">фото-пример</span></div><figcaption class="cap"><span class="cap__name">Обложка для видео</span><span class="cap__price">30 ₽</span></figcaption></figure></a>
+        </div>
+      </div>
+
+      <div class="strip-head">
+        <h3 class="h3">Ещё 8 заданий</h3>
+        <div class="strip-nav">
+          <button class="icon-btn" type="button" data-strip="-1" aria-label="Листать назад"><svg aria-hidden="true"><use href="#i-left"/></svg></button>
+          <button class="icon-btn" type="button" data-strip="1" aria-label="Листать вперёд"><svg aria-hidden="true"><use href="#i-right"/></svg></button>
+        </div>
+      </div>
+      <div class="strip" id="strip" tabindex="0" aria-label="Ещё задания, листаются вбок">
+        <a class="task" href="#"><figure><div class="ph ph--45"><img src="../assets/delovoj-portret.webp" alt="Мужчина с седой бородой в очках, деловой портрет на светлом фоне" width="960" height="1200" loading="lazy"><span class="stamp">фото-пример</span></div><figcaption class="cap"><span class="cap__name">Деловой портрет</span><span class="cap__price">9 ₽</span></figcaption></figure></a>
+        <a class="task" href="#"><figure><div class="ph ph--45"><img src="../assets/osennyaya-fotosessiya.webp" alt="Женщина в красном идёт по осенней аллее" width="960" height="1200" loading="lazy"><span class="stamp">фото-пример</span></div><figcaption class="cap"><span class="cap__name">Осенняя фотосессия</span><span class="cap__price">9 ₽</span></figcaption></figure></a>
+        <a class="task" href="#"><figure><div class="ph ph--45"><img src="../assets/vosstanovit-staroe-foto.webp" alt="Старая семейная фотография, восстановленная без трещин" width="960" height="1200" loading="lazy"><span class="stamp">фото-пример</span></div><figcaption class="cap"><span class="cap__name">Восстановить старое фото</span><span class="cap__price">9 ₽</span></figcaption></figure></a>
+        <a class="task" href="#"><figure><div class="ph ph--45"><img src="../assets/raskrasit-foto.webp" alt="Монастырь с голубыми куполами в цвете" width="960" height="1200" loading="lazy"><span class="stamp">фото-пример</span></div><figcaption class="cap"><span class="cap__name">Раскрасить ч/б фото</span><span class="cap__price">9 ₽</span></figcaption></figure></a>
+        <a class="task" href="#"><figure><div class="ph ph--45"><img src="../assets/novogodnyaya-otkrytka.webp" alt="Ёлочные игрушки и гирлянда" width="960" height="1200" loading="lazy"><span class="stamp">фото-пример</span></div><figcaption class="cap"><span class="cap__name">Новогодняя открытка</span><span class="cap__price">30 ₽</span></figcaption></figure></a>
+        <a class="task" href="#"><figure><div class="ph ph--45"><img src="../assets/ozhivit-foto.webp" alt="Старый портрет женщины, который станет коротким роликом" width="960" height="1200" loading="lazy"><span class="stamp">фото-пример</span></div><figcaption class="cap"><span class="cap__name">Оживить фото</span><span class="cap__price">40 ₽</span></figcaption></figure></a>
+        <a class="task" href="#"><figure><div class="ph ph--45"><img src="../assets/rolik-po-opisaniyu.webp" alt="Бариста наливает молоко в капучино" width="960" height="1200" loading="lazy"><span class="stamp">фото-пример</span></div><figcaption class="cap"><span class="cap__name">Ролик по описанию</span><span class="cap__price">70 ₽</span></figcaption></figure></a>
+        <a class="task" href="#"><figure><div class="ph ph--45"><img src="../assets/pesnya-na-den-rozhdeniya.webp" alt="Торт со свечами" width="960" height="1200" loading="lazy"><span class="stamp">фото-пример</span></div><figcaption class="cap"><span class="cap__name">Песня на день рождения</span><span class="cap__price">32 ₽</span></figcaption></figure></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Было — стало -->
+  <section class="sec" id="tools" aria-labelledby="h-tools">
+    <div class="wrap split">
+      <div class="side">
+        <h2 class="h2" id="h-tools">Было — стало</h2>
+        <p>Инструменты в одно нажатие: загрузили фото — получили исправленное. Потяните ручку на снимке, чтобы сравнить.</p>
+        <div class="tools__list" role="tablist" aria-label="Инструменты">
+          <button class="tool" role="tab" aria-selected="true" aria-controls="cmp" data-x="64" data-slug="udalit-fon" data-name="Удалить фон" data-price="4 ₽" data-what="Вырежет предмет и оставит прозрачный фон — для карточки товара или открытки."><b>Удалить фон</b><span>4 ₽</span></button>
+          <button class="tool" role="tab" aria-selected="false" aria-controls="cmp" data-slug="uluchshit-kachestvo" data-name="Улучшить качество" data-price="4 ₽" data-what="Сделает мутный снимок чётким и крупнее — можно печатать."><b>Улучшить качество</b><span>4 ₽</span></button>
+          <button class="tool" role="tab" aria-selected="false" aria-controls="cmp" data-slug="vosstanovit-staroe-foto" data-name="Восстановить старое фото" data-price="9 ₽" data-what="Уберёт трещины, пятна и заломы со старого семейного снимка."><b>Восстановить старое фото</b><span>9 ₽</span></button>
+          <button class="tool" role="tab" aria-selected="false" aria-controls="cmp" data-slug="raskrasit-foto" data-name="Раскрасить фото" data-price="9 ₽" data-what="Вернёт цвет чёрно-белой фотографии."><b>Раскрасить фото</b><span>9 ₽</span></button>
+        </div>
+      </div>
+      <div>
+        <div class="cmp" id="cmp" role="tabpanel" style="--x:64%">
+          <img id="cmp-after" src="../assets/udalit-fon-after.webp" alt="Стало: мандарин без фона" width="1200" height="800">
+          <img id="cmp-before" class="cmp__before" src="../assets/udalit-fon-before.webp" alt="Было: мандарин на кухонном столе" width="1200" height="800">
+          <span class="cmp__line"></span>
+          <span class="cmp__knob"><svg aria-hidden="true"><use href="#i-lr"/></svg></span>
+          <span class="cmp__lab cmp__lab--a">Было</span><span class="cmp__lab cmp__lab--b">Стало</span>
+          <input type="range" min="0" max="100" value="64" aria-label="Сравнить: сдвиньте влево или вправо">
+        </div>
+        <div class="tools__foot">
+          <p><b id="tool-name">Удалить фон</b> — <span class="serif num" id="tool-price" style="font-size:1.25rem">4 ₽</span>. <span id="tool-what" class="muted">Вырежет предмет и оставит прозрачный фон — для карточки товара или открытки.</span></p>
+          <a class="btn" href="#">Загрузить фото</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Сколько стоит сделать -->
+  <section class="sec sec--band" id="prices" aria-labelledby="h-prices">
+    <div class="wrap">
+      <div class="side" style="max-width:760px">
+        <h2 class="h2" id="h-prices">Сколько стоит сделать</h2>
+        <p>Платите за готовую работу. Цена видна до запуска, деньги списываются только за результат.</p>
+      </div>
+      <div class="prices__grid">
+        <table class="ledger">
+          <caption class="sr">Цены на частые работы</caption>
+          <thead><tr><th scope="col">Работа</th><th scope="col" class="r">Цена</th></tr></thead>
+          <tbody>
+            <tr><td>Ответ клиенту на отзыв</td><td class="r price">0,50 ₽</td></tr>
+            <tr><td>Удалить фон с фото</td><td class="r price">4 ₽</td></tr>
+            <tr><td>Пост для соцсетей</td><td class="r price">5,40 ₽</td></tr>
+            <tr><td>Фото товара на белом фоне</td><td class="r price">9 ₽</td></tr>
+            <tr><td>Открытка с надписью</td><td class="r price">30 ₽</td></tr>
+            <tr><td>Озвучка текста</td><td class="r price">30 ₽</td></tr>
+            <tr><td>Песня</td><td class="r price">32 ₽</td></tr>
+            <tr><td>Оживить фото — ролик</td><td class="r price">40 ₽</td></tr>
+          </tbody>
+        </table>
+
+        <form class="calc" onsubmit="return false" aria-labelledby="calc-l">
+          <fieldset>
+            <legend id="calc-l">Если пополнить на</legend>
+            <div class="calc__sums">
+              <label><input type="radio" name="sum" value="300"><span>300 ₽</span></label>
+              <label><input type="radio" name="sum" value="500" checked><span>500 ₽</span></label>
+              <label><input type="radio" name="sum" value="1000"><span>1 000 ₽</span></label>
+              <label><input type="radio" name="sum" value="2000"><span>2 000 ₽</span></label>
+            </div>
+          </fieldset>
+          <div class="calc__out" aria-live="polite">
+            <p>хватит примерно на</p>
+            <div class="calc__res">
+              <div><b data-per="0.5">1 000</b><span data-w="ответ,ответа,ответов">ответов</span><em>по 0,50 ₽</em></div>
+              <div><b data-per="9">55</b><span data-w="картинку,картинки,картинок">картинок</span><em>по 9 ₽</em></div>
+              <div><b data-per="32">15</b><span data-w="песню,песни,песен">песен</span><em>по 32 ₽</em></div>
+              <div><b data-per="40">12</b><span data-w="ролик,ролика,роликов">роликов</span><em>по 40 ₽</em></div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="sec" style="padding-top:72px" aria-labelledby="h-vs">
+        <div class="side" style="max-width:760px">
+          <h3 class="h2" id="h-vs">Честно: сколько это стоит у исполнителя</h3>
+          <p>Хороший мастер сделает тоньше. Но для повседневных задач разница в цене — в сотни раз.</p>
+        </div>
+        <div class="vs">
+          <div class="vs__row">
+            <p class="vs__t">Фото товара, за снимок</p>
+            <div class="vs__right">
+              <dl class="vs__nums"><div><dt>У исполнителя, ориентир</dt><dd>от 1 500 ₽</dd></div><div><dt>Здесь</dt><dd>9 ₽</dd></div></dl>
+              <div class="bars" aria-hidden="true"><span class="bar bar--them"></span><span class="bar bar--us" style="width:.6%"></span></div>
+              <p class="vs__note" aria-hidden="true"><svg viewBox="0 0 56 44"><path class="ink-line" d="M50 34 C 34 36, 14 30, 8 6 M3 15 C 5 11, 6 7, 8 3 C 11 6, 14 9, 17 11"/></svg><span class="note">9 ₽ — вот эта чёрточка</span></p>
+            </div>
+          </div>
+          <div class="vs__row">
+            <p class="vs__t">Короткий ролик</p>
+            <div class="vs__right">
+              <dl class="vs__nums"><div><dt>У исполнителя, ориентир</dt><dd>от 1 500 ₽</dd></div><div><dt>Здесь</dt><dd>от 40 ₽</dd></div></dl>
+              <div class="bars" aria-hidden="true"><span class="bar bar--them"></span><span class="bar bar--us" style="width:2.7%"></span></div>
+            </div>
+          </div>
+          <div class="vs__row">
+            <p class="vs__t">Бот для заявок</p>
+            <div class="vs__right">
+              <dl class="vs__nums"><div><dt>У исполнителя, ориентир</dt><dd>15–50 тыс. ₽</dd></div><div><dt>Здесь</dt><dd class="word">пошаговая инструкция</dd></div></dl>
+            </div>
+          </div>
+        </div>
+        <p class="foot-note">Цены исполнителей — ориентир, а не точная цена: бывает и дешевле, и дороже. Мы не обещаем дохода — только показываем, сколько стоит сделать самому.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Лучшие нейросети -->
+  <section class="sec models" id="models" aria-labelledby="h-models">
+    <div class="wrap split">
+      <div class="side">
+        <h2 class="h2" id="h-models">Лучшие нейросети — в одном окне</h2>
+        <p>Не нужно разбираться, где какая. Выбираете дело, а подходящая нейросеть подставится сама.</p>
+        <p><a href="#">Все 24 нейросети и цены</a></p>
+      </div>
+      <table class="ledger">
+        <caption class="sr">Нейросети и цены</caption>
+        <thead><tr><th scope="col">Нейросеть</th><th scope="col" class="r">Цена</th></tr></thead>
+        <tbody>
+          <tr><td><div class="model"><span class="mark" aria-hidden="true">AI</span><b>GPT-6 Luna</b><span>OpenAI. Тексты, письма, ответы клиентам</span></div></td><td class="r price">0,50 ₽<span class="unit">за сообщение</span></td></tr>
+          <tr><td><div class="model"><img src="../assets/claude.svg" alt="" width="28" height="28"><b>Claude Sonnet 5.5</b><span>Anthropic. Длинные тексты и разбор документов</span></div></td><td class="r price">5,40 ₽<span class="unit">за сообщение</span></td></tr>
+          <tr><td><div class="model"><img src="../assets/googlegemini.svg" alt="" width="28" height="28"><b>Gemini 3.1 Pro</b><span>Google. Таблицы, файлы, фото</span></div></td><td class="r price">6 ₽<span class="unit">за сообщение</span></td></tr>
+          <tr><td><div class="model"><img src="../assets/deepseek.svg" alt="" width="28" height="28"><b>DeepSeek V4.1</b><span>DeepSeek. Быстрые ответы и расчёты</span></div></td><td class="r price">0,80 ₽<span class="unit">за сообщение</span></td></tr>
+          <tr><td><div class="model"><img src="../assets/google.svg" alt="" width="28" height="28"><b>Nano Banana 2.1</b><span>Google. Картинки и фото товара</span></div></td><td class="r price">9 ₽<span class="unit">за картинку</span></td></tr>
+          <tr><td><div class="model"><img src="../assets/kuaishou.svg" alt="" width="28" height="28"><b>Kling 2.5</b><span>Kuaishou. Ролики по описанию и по фото</span></div></td><td class="r price">70 ₽<span class="unit">за ролик</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Научиться самому -->
+  <section class="sec" id="learn" aria-labelledby="h-learn">
+    <div class="wrap">
+      <div class="side" style="max-width:760px">
+        <h2 class="h2" id="h-learn">Научиться самому</h2>
+        <p>Пошаговые инструкции и программы по дням — для тех, кто хочет разобраться и делать без подсказок.</p>
+      </div>
+      <div class="learn__grid">
+        <div>
+          <p class="sub-h">Программы по дням</p>
+          <div class="learn__progs">
+            <a class="prog" href="#"><span><span class="prog__t">Рилс каждый день</span><span class="prog__d" style="display:block;margin-top:6px">Ролик для соцсетей за 15 минут — без съёмки и монтажа</span></span><span class="days" aria-label="14 дней"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><b>14</b><small>дней</small></span></a>
+            <a class="prog" href="#"><span><span class="prog__t">Нейрофото</span><span class="prog__d" style="display:block;margin-top:6px">Портреты, фотосессии и открытки из своих снимков</span></span><span class="days" aria-label="7 дней"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><b>7</b><small>дней</small></span></a>
+            <a class="prog" href="#"><span><span class="prog__t">Нейросети для селлера</span><span class="prog__d" style="display:block;margin-top:6px">Карточки, фото товара и ответы покупателям</span></span><span class="days" aria-label="10 дней"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><b>10</b><small>дней</small></span></a>
+          </div>
+        </div>
+        <div>
+          <p class="sub-h">Инструкции</p>
+          <a class="guide-lead" href="#">
+            <figure><div class="ph ph--32"><img src="../assets/tovar-v-interere.webp" alt="Кружка на столе — снимок товара, сделанный без фотографа" width="960" height="1200" loading="lazy" style="object-position:50% 60%"></div></figure>
+            <span class="h3">Фото товара без фотографа</span>
+            <span class="meta"><span class="lvl">Легко</span><span>20 минут</span><span>9 ₽ за снимок</span></span>
+          </a>
+          <div class="guides">
+            <a class="guide" href="#"><b>Презентация за 15 минут</b><span class="meta"><span class="lvl">Легко</span><span>15 минут</span><span>бесплатно</span></span></a>
+            <a class="guide" href="#"><b>Бот-автоответчик для бизнеса</b><span class="meta"><span class="lvl">Средне</span><span>1 час</span><span>по подписке</span></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Вопросы -->
+  <section class="sec" id="faq" aria-labelledby="h-faq">
+    <div class="wrap split">
+      <div class="side"><h2 class="h2" id="h-faq">Вопросы</h2></div>
+      <div class="faq">
+        <details><summary>Нужно ли что-то понимать в нейросетях?<svg aria-hidden="true"><use href="#i-open"/></svg></summary><p>Нет. Выбираете дело и задание, загружаете фото или пишете пару слов по-русски. Готовые запросы уже составлены за вас.</p></details>
+        <details><summary>Сколько это стоит?<svg aria-hidden="true"><use href="#i-open"/></svg></summary><p>Инструкции к готовым заданиям — бесплатно, остальные — по подписке. Работа нейросети — от 0,50 ₽, цена видна до запуска. После входа — 30 ₽ в подарок на первые работы.</p></details>
+        <details><summary>Как платить?<svg aria-hidden="true"><use href="#i-open"/></svg></summary><p>Пополняете кошелёк в рублях картой или через СБП и платите только за готовые работы. Цена видна на кнопке до запуска.</p></details>
+        <details><summary>Что, если результат не понравился?<svg aria-hidden="true"><use href="#i-open"/></svg></summary><p>Нажмите «Переделать» и скажите, что изменить. В инструкциях есть подсказки, как добиться нужного результата.</p></details>
+        <details><summary>Где хранятся мои фото и тексты?<svg aria-hidden="true"><use href="#i-open"/></svg></summary><p>В разделе «Мои работы» — видите их только вы. Удалить можно в любой момент.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="final" aria-labelledby="h-final">
+    <div class="wrap">
+      <h2 class="h2" id="h-final">Начните с одного дела — остальное по шагам</h2>
+      <p>После входа — 30 ₽ в подарок. Этого хватит на 60 ответов клиентам или три картинки.</p>
+      <div class="final__act">
+        <a class="btn btn--marker" href="#">Войти и получить 30 ₽</a>
+        <a href="#groups">Сначала выбрать своё дело</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <p>ИИ — легко, 2026</p>
+    <nav aria-label="Служебные ссылки"><a href="#prices">Цены</a><a href="#learn">Инструкции</a><a href="#">Помощь</a><a href="#">Оферта</a><a href="#">Обработка данных</a></nav>
+  </div>
+</footer>
+</div>
+
+<nav class="tabbar" aria-label="Разделы">
+  <a class="tab" href="index.html" aria-current="page"><svg aria-hidden="true"><use href="#i-home"/></svg><span>Главная</span></a>
+  <a class="tab" href="#ask"><svg aria-hidden="true"><use href="#i-chat"/></svg><span>Чат</span></a>
+  <a class="tab tab--make" href="#ask"><span class="tab__plus"><svg aria-hidden="true"><use href="#i-plus"/></svg></span>Создать</a>
+  <a class="tab" href="#tasks"><svg aria-hidden="true"><use href="#i-tasks"/></svg><span>Задания</span></a>
+  <a class="tab" href="#"><svg aria-hidden="true"><use href="#i-works"/></svg><span>Работы</span></a>
+</nav>
+
+<script>
+(() => {
+
+  // Кольца пометок: пересчитываем контур под реальный размер, чтобы линия была ровной толщины и рисовалась целиком
+  const fitRings = () => document.querySelectorAll('.ann__ring').forEach(svg => {
+    const path = svg.querySelector('path'); const [, , vw, vh] = (svg.dataset.vb || (svg.dataset.vb = svg.getAttribute('viewBox'))).split(' ').map(Number);
+    const d0 = path.dataset.d || (path.dataset.d = path.getAttribute('d'));
+    const { width: w, height: h } = svg.getBoundingClientRect(); if (!w || !h) return;
+    let i = 0; path.setAttribute('d', d0.replace(/-?\d+(\.\d+)?/g, n => (+n * (i++ % 2 ? h / vh : w / vw)).toFixed(1)));
+    svg.setAttribute('viewBox', `0 0 ${w.toFixed(1)} ${h.toFixed(1)}`);
+  });
+  fitRings(); addEventListener('resize', fitRings); document.fonts && document.fonts.ready.then(fitRings);
+  const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+
+  // Пометка ручкой рисуется один раз, когда строка запроса видна
+  const draw = $$('.draw');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-drawn'); io.unobserve(e.target); } }), { threshold: .55 });
+    draw.forEach(d => io.observe(d));
+  } else draw.forEach(d => d.classList.add('is-drawn'));
+
+  // Вкладки строки запроса
+  const tabs = $$('.seg [role=tab]');
+  tabs.forEach(t => t.addEventListener('click', () => {
+    tabs.forEach(x => x.setAttribute('aria-selected', x === t));
+    $('#prompt').placeholder = t.dataset.ph; $('#price').textContent = t.dataset.price; fitRings();
+  }));
+  const arrows = (list) => list.forEach((t, i) => t.addEventListener('keydown', e => {
+    const k = e.key === 'ArrowRight' || e.key === 'ArrowDown' ? 1 : e.key === 'ArrowLeft' || e.key === 'ArrowUp' ? -1 : 0;
+    if (!k) return; e.preventDefault(); const n = list[(i + k + list.length) % list.length]; n.focus(); n.click();
+  }));
+  arrows(tabs);
+
+  // Поиск своего дела
+  const q = $('#q'), groups = $$('.group'), empty = $('#groups-empty');
+  q && q.addEventListener('input', () => {
+    const v = q.value.trim().toLowerCase(); let n = 0;
+    groups.forEach(g => { const ok = !v || g.textContent.toLowerCase().includes(v); g.hidden = !ok; n += ok; });
+    empty.hidden = n > 0;
+  });
+
+  // Лента заданий
+  const strip = $('#strip');
+  $$('[data-strip]').forEach(b => b.addEventListener('click', () => strip.scrollBy({ left: +b.dataset.strip * strip.clientWidth * .8, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' })));
+
+  // Было — стало
+  const cmp = $('#cmp');
+  if (cmp) {
+    const r = $('input', cmp); const set = () => cmp.style.setProperty('--x', r.value + '%');
+    r.addEventListener('input', set);
+    const tools = $$('.tool');
+    tools.forEach(t => t.addEventListener('click', () => {
+      tools.forEach(x => x.setAttribute('aria-selected', x === t));
+      $('#cmp-before').src = `../assets/${t.dataset.slug}-before.webp`; $('#cmp-after').src = `../assets/${t.dataset.slug}-after.webp`;
+      $('#cmp-before').alt = 'Было: ' + t.dataset.name.toLowerCase(); $('#cmp-after').alt = 'Стало: ' + t.dataset.name.toLowerCase();
+      $('#tool-name').textContent = t.dataset.name; $('#tool-price').textContent = t.dataset.price; $('#tool-what').textContent = t.dataset.what;
+      r.value = t.dataset.x || 50; set();
+    }));
+    arrows(tools);
+  }
+
+  // Калькулятор
+  const plural = (n, [a, b, c]) => { const m10 = n % 10, m100 = n % 100; return m10 === 1 && m100 !== 11 ? a : m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14) ? b : c; };
+  const fmt = n => n.toLocaleString('ru-RU').replace(/\s/g, ' ');
+  const calc = () => {
+    const s = +$('input[name=sum]:checked').value;
+    $$('.calc__res > div').forEach(d => { const b = $('b', d), w = $('span', d); const n = Math.floor(s / +b.dataset.per); b.textContent = fmt(n); w.textContent = plural(n, w.dataset.w.split(',')); });
+  };
+  $$('input[name=sum]').forEach(i => i.addEventListener('change', calc));
+})();
+</script>
+</body>
+</html>

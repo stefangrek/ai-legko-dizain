@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Нейросети для автосервиса — ИИ — легко</title>
+<meta name="description" content="Ответы на отзывы, объяснение поломки клиенту, картинка для акции и ролики без съёмки — за рубли. Пошаговые инструкции: бот записи, калькулятор ТО, сайт.">
+<link rel="preload" href="fonts/unbounded-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/geologica-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-4.5v-6h-5v6H5a1 1 0 0 1-1-1z"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4.5h14a1 1 0 0 1 1 1V16a1 1 0 0 1-1 1h-8.5L6 20.5V17H5a1 1 0 0 1-1-1V5.5a1 1 0 0 1 1-1z"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="m4 17.5 5-4.5 4 3.5 3-2.5 4.5 3.5"/></symbol>
+    <symbol id="i-split" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="14" rx="2"/><path d="M12 3v18"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5c2.5-1 5.5-1 8 .5 2.5-1.5 5.5-1.5 8-.5V19c-2.5-1-5.5-1-8 .5-2.5-1.5-5.5-1.5-8-.5z"/><path d="M12 6v13.5"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-rub" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M10 7.5h3a2.25 2.25 0 0 1 0 4.5h-3zm0 4.5v5m-1.5-2.5H13"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="9" y="3.5" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m14.5 6-6 6 6 6"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9.5 6 6 6-6 6"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.5v15l12.5-7.5z" fill="currentColor"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11m-5-5 5 5 5-5M5 20h14"/></symbol>
+    <symbol id="i-lr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 7-5 5 5 5M15 7l5 5-5 5"/></symbol>
+    <symbol id="i-again" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4.5v4h-4"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#content">К содержанию</a>
+
+<aside class="side screen" aria-label="Разделы">
+  <a class="logo" href="index.html"><span class="led" aria-hidden="true"></span>ИИ&nbsp;— легко</a>
+  <a class="btn btn-go" href="#now"><svg class="ico"><use href="#i-plus"/></svg>Создать</a>
+  <nav class="snav">
+    <a href="index.html"><svg class="ico"><use href="#i-home"/></svg>Главная</a>
+    <a href="#"><svg class="ico"><use href="#i-chat"/></svg>Чат с нейросетью</a>
+    <a href="index.html#tasks"><svg class="ico"><use href="#i-grid"/></svg>Готовые задания</a>
+    <a href="index.html#tools"><svg class="ico"><use href="#i-split"/></svg>Инструменты</a>
+    <a href="#learn"><svg class="ico"><use href="#i-book"/></svg>Инструкции</a>
+    <a href="index.html#learn"><svg class="ico"><use href="#i-cal"/></svg>Программы</a>
+    <a href="#"><svg class="ico"><use href="#i-image"/></svg>Мои работы</a>
+    <a href="index.html#prices"><svg class="ico"><use href="#i-rub"/></svg>Цены</a>
+  </nav>
+  <div class="side-foot">
+    <p>После входа — 30&nbsp;₽ в&nbsp;подарок. Хватит на&nbsp;60&nbsp;ответов клиентам.</p>
+    <a class="btn btn-line btn-sm" href="#">Войти</a>
+  </div>
+</aside>
+
+<header class="top">
+  <a class="logo" href="index.html"><span class="led" aria-hidden="true"></span>ИИ&nbsp;— легко</a>
+  <a class="btn btn-line" href="#">Войти</a>
+</header>
+
+<main class="main" id="content">
+<div class="wrap">
+
+  <nav class="crumbs" aria-label="Вы здесь">
+    <a href="index.html">Главная</a><span aria-hidden="true">›</span>
+    <a href="index.html#groups">Ремонт, стройка, авто</a><span aria-hidden="true">›</span>
+    <span aria-current="page">Автосервис</span>
+  </nav>
+
+  <section class="nhead" aria-labelledby="h1">
+    <div>
+      <h1 id="h1">Нейросети для автосервиса</h1>
+      <p class="lead">Запись, ответы «сколько стоит» и&nbsp;отзывы — пока вы под машиной.</p>
+      <div class="hero-act" style="margin-top:24px">
+        <a class="btn btn-go" href="#now">Ответить на&nbsp;отзыв — 0,50&nbsp;₽</a>
+      </div>
+      <ul class="nfacts">
+        <li><b>4</b> дела можно сделать сейчас</li>
+        <li><b>6</b> пошаговых инструкций</li>
+      </ul>
+    </div>
+    <!-- нарисованный кодом входящий поток: что приходит в автосервис за день -->
+    <div class="inbox screen" aria-label="Пример: сообщения клиентов и готовые ответы">
+      <p class="inbox-h">Сообщения клиентов <span><span class="led ice" aria-hidden="true"></span>сегодня</span></p>
+      <ul>
+        <li><span class="av" aria-hidden="true">А</span><div><b>Андрей, Telegram</b><p>Сколько стоит замена колодок на&nbsp;Солярис?</p></div><span class="st">Ответ готов</span></li>
+        <li><span class="av" aria-hidden="true">М</span><div><b>Марина, ВКонтакте</b><p>Можно записаться на&nbsp;субботу утром?</p></div><span class="st">Ответ готов</span></li>
+        <li><span class="av" aria-hidden="true">О</span><div><b>Отзыв на&nbsp;картах</b><p>Сделали быстро, но&nbsp;вернули машину грязной.</p></div><span class="st">Ответ готов</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec" id="now" aria-labelledby="h-now">
+    <div class="sec-head">
+      <div>
+        <h2 class="h2" id="h-now">Сделать прямо сейчас</h2>
+        <p class="sub">Запрос уже написан под автосервис. Поменяйте детали и&nbsp;нажмите «Сделать».</p>
+      </div>
+    </div>
+    <div class="now">
+      <article class="job wide">
+        <div class="pv screen">
+          <div class="chat" id="revchat" aria-live="polite">
+            <div class="msg-u text-only"><span>Напишите вежливый ответ на&nbsp;отзыв клиента автосервиса: «Сделали быстро, но&nbsp;вернули машину грязной»</span></div>
+            <div class="msg-b" id="revans"><div class="bubble"><span><b>Готово: вежливый ответ и&nbsp;приглашение приехать снова</b><br>«Спасибо, что выбрали нас и&nbsp;оценили скорость! Простите за&nbsp;грязный салон — это наша ошибка. В&nbsp;следующий визит мойка за&nbsp;наш счёт. Ждём вас снова».</span></div></div>
+          </div>
+        </div>
+        <div class="txt">
+          <h3 class="h3">Ответ на&nbsp;отзыв</h3>
+          <p>Вежливо, без оправданий, с&nbsp;приглашением приехать снова. Подходит для Яндекс Карт, 2ГИС и&nbsp;Авито.</p>
+          <a class="btn btn-go btn-sm" href="#">Сделать — 0,50&nbsp;₽</a>
+        </div>
+      </article>
+
+      <article class="job">
+        <div class="pv screen">
+          <div class="chat">
+            <div class="msg-u text-only"><span>Объясните клиенту простыми словами: стучит ШРУС, нужна замена</span></div>
+            <div class="msg-b"><div class="bubble"><span>Стук при повороте значит, что шарнир у&nbsp;колеса износился. Если ехать дальше, он может разрушиться в&nbsp;дороге — тогда понадобится эвакуатор.</span></div></div>
+          </div>
+        </div>
+        <div class="txt">
+          <h3 class="h3">Объяснить клиенту поломку</h3>
+          <p>Без терминов: что сломалось и&nbsp;чем опасно.</p>
+          <a class="btn btn-go btn-sm" href="#">Сделать — 0,50&nbsp;₽</a>
+        </div>
+      </article>
+
+      <article class="job">
+        <div class="pv photo">
+          <img src="../assets/gruppa-stroyka.webp" alt="" loading="lazy">
+          <span class="ex">фото-пример</span>
+          <div class="promo" aria-hidden="true"><b>Шиномонтаж со&nbsp;скидкой</b><span>Только до&nbsp;конца октября</span></div>
+        </div>
+        <div class="txt">
+          <h3 class="h3">Картинка для акции</h3>
+          <p>Для группы, Авито и&nbsp;объявления у&nbsp;входа.</p>
+          <a class="btn btn-go btn-sm" href="#">Сделать — 9&nbsp;₽</a>
+        </div>
+      </article>
+
+      <article class="job">
+        <div class="pv photo">
+          <img src="../assets/logotip.webp" alt="" loading="lazy">
+          <span class="ex">фото-пример</span>
+          <div class="ov-player" aria-hidden="true"><span class="pl"><svg><use href="#i-play"/></svg></span><span class="tl"><b>Когда менять масло</b><span class="bar"></span></span></div>
+        </div>
+        <div class="txt">
+          <h3 class="h3">Ролик без съёмки</h3>
+          <p>Опишите словами — получите ролик для соцсетей.</p>
+          <a class="btn btn-go btn-sm" href="#">Сделать — 70&nbsp;₽</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="h-more">
+    <div class="sec-head">
+      <div>
+        <h2 class="h2" id="h-more">Что ещё можно сделать</h2>
+        <p class="sub">Это дольше, чем одна кнопка, но&nbsp;по&nbsp;инструкции получится самому. Цены исполнителей — ориентир.</p>
+      </div>
+    </div>
+    <ul class="more">
+      <li>
+        <h3>Бот записи на&nbsp;ремонт</h3>
+        <p>Клиент сам выбирает день и&nbsp;время в&nbsp;Telegram, вам приходит заявка.</p>
+        <div class="vs"><span>У&nbsp;исполнителей <b>15–50&nbsp;тыс.&nbsp;₽</b></span><a href="#">Здесь — пошаговая инструкция</a></div>
+      </li>
+      <li>
+        <h3>Калькулятор ТО</h3>
+        <p>Клиент вводит марку и&nbsp;пробег — видит, сколько примерно стоит обслуживание.</p>
+        <div class="vs"><span>У&nbsp;исполнителей <b>5–20&nbsp;тыс.&nbsp;₽</b></span><a href="#">Здесь — пошаговая инструкция</a></div>
+      </li>
+      <li>
+        <h3>Сайт с&nbsp;услугами</h3>
+        <p>Одна страница: работы, цены, адрес и&nbsp;кнопка записи.</p>
+        <div class="vs"><span>У&nbsp;исполнителей <b>10–30&nbsp;тыс.&nbsp;₽</b></span><a href="#">Здесь — пошаговая инструкция</a></div>
+      </li>
+      <li>
+        <h3>Советы водителям в&nbsp;роликах</h3>
+        <p>Короткие ролики для соцсетей: когда менять масло, как подготовить машину к&nbsp;зиме.</p>
+        <div class="vs"><span>Здесь <b>от&nbsp;70&nbsp;₽</b> за&nbsp;ролик</span><a href="#">Инструкция: ролики без съёмки</a></div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="sec" id="learn" aria-labelledby="h-learn">
+    <div class="sec-head">
+      <div>
+        <h2 class="h2" id="h-learn">Научиться самому</h2>
+        <p class="sub">Пошаговые инструкции для автосервиса.</p>
+      </div>
+    </div>
+    <ul class="instr">
+      <li><a href="#">Бот записи на&nbsp;ремонт в&nbsp;Telegram</a><span class="lvl" data-l="2"><i><s></s><s></s><s></s></i>средне</span></li>
+      <li><a href="#">Ответы на&nbsp;отзывы на&nbsp;картах: как не&nbsp;потерять клиента</a><span class="lvl" data-l="1"><i><s></s><s></s><s></s></i>легко</span></li>
+      <li><a href="#">Как объяснить клиенту поломку простыми словами</a><span class="lvl" data-l="1"><i><s></s><s></s><s></s></i>легко</span></li>
+      <li><a href="#">Картинка для акции без дизайнера</a><span class="lvl" data-l="1"><i><s></s><s></s><s></s></i>легко</span></li>
+      <li><a href="#">Сайт автосервиса с&nbsp;ценами и&nbsp;записью</a><span class="lvl" data-l="2"><i><s></s><s></s><s></s></i>средне</span></li>
+      <li><a href="#">Калькулятор стоимости ТО на&nbsp;сайте</a><span class="lvl" data-l="3"><i><s></s><s></s><s></s></i>сложно</span></li>
+    </ul>
+  </section>
+
+  <section class="sec" aria-labelledby="h-sim">
+    <div class="sec-head"><div><h2 class="h2" id="h-sim">Похожие дела</h2></div></div>
+    <div class="similar">
+      <a href="#">Ремонт и&nbsp;отделка<svg class="ico" aria-hidden="true"><use href="#i-right"/></svg></a>
+      <a href="#">Дома и&nbsp;бани<svg class="ico" aria-hidden="true"><use href="#i-right"/></svg></a>
+      <a href="#">Переезды и&nbsp;грузоперевозки<svg class="ico" aria-hidden="true"><use href="#i-right"/></svg></a>
+    </div>
+  </section>
+
+  <section class="final screen" aria-labelledby="h-final">
+    <div>
+      <h2 class="h2" id="h-final">Ответьте клиенту, пока он не&nbsp;ушёл к&nbsp;соседям</h2>
+      <p class="sub">После входа — 30&nbsp;₽ в&nbsp;подарок: хватит на&nbsp;60&nbsp;ответов.</p>
+    </div>
+    <form class="composer" onsubmit="return false">
+      <div class="cfield">
+        <label class="vh" for="ask2">Попросите нейросеть</label>
+        <textarea id="ask2" rows="3">Напишите клиенту, сколько примерно стоит замена ремня ГРМ на Lada Vesta и сколько времени займёт работа</textarea>
+      </div>
+      <div class="crow">
+        <button type="button" class="cbtn" aria-label="Сказать голосом"><svg class="ico"><use href="#i-mic"/></svg></button>
+        <span class="cprice">≈ 0,50&nbsp;₽ за&nbsp;ответ</span>
+        <button type="submit" class="csend" aria-label="Отправить"><svg class="ico"><use href="#i-send"/></svg></button>
+      </div>
+    </form>
+  </section>
+
+  <footer class="foot">
+    <nav aria-label="Подвал">
+      <a href="index.html#tasks">Готовые задания</a><a href="#learn">Инструкции</a><a href="index.html#prices">Цены</a><a href="#">Для бизнеса</a><a href="#">Поддержка</a><a href="#">Оферта</a><a href="#">Конфиденциальность</a>
+    </nav>
+    <div>
+      <p>© 2026 «ИИ — легко». Цены указаны в&nbsp;рублях.</p>
+      <p>Названия и&nbsp;логотипы нейросетей принадлежат их владельцам.</p>
+    </div>
+  </footer>
+
+</div>
+</main>
+
+<nav class="tabbar" aria-label="Разделы">
+  <a href="index.html"><svg class="ico"><use href="#i-home"/></svg>Главная</a>
+  <a href="#"><svg class="ico"><use href="#i-chat"/></svg>Чат</a>
+  <a class="create" href="#now"><svg class="ico"><use href="#i-plus"/></svg>Создать</a>
+  <a href="index.html#tasks"><svg class="ico"><use href="#i-grid"/></svg>Задания</a>
+  <a href="#"><svg class="ico"><use href="#i-image"/></svg>Работы</a>
+</nav>
+
+<script>
+(() => {
+  // Одно движение на странице: ответ на отзыв собирается, когда пример виден
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const ans = document.getElementById('revans');
+  const chat = document.getElementById('revchat');
+  const answer = ans.innerHTML;
+  ans.style.visibility = 'hidden';
+  const io = new IntersectionObserver((es) => {
+    if (!es[0].isIntersecting) return;
+    io.disconnect();
+    ans.innerHTML = '<div class="working"><div class="ring"><svg viewBox="0 0 76 76" aria-hidden="true"><circle class="tks" cx="38" cy="38" r="32"/><circle class="trk" cx="38" cy="38" r="32"/><circle class="val" cx="38" cy="38" r="32"/></svg><b>0&nbsp;%</b></div><div>Пишу ответ…<small>Нейросеть: GPT-6 Luna</small></div></div>';
+    ans.style.visibility = '';
+    const arc = ans.querySelector('.val'), pct = ans.querySelector('.ring b'), C = 201.06, T = 1400, t0 = performance.now();
+    const tick = (t) => {
+      const k = Math.min(1, (t - t0) / T), e = 1 - Math.pow(1 - k, 2.2);
+      arc.style.strokeDashoffset = (C * (1 - e)).toFixed(2);
+      pct.textContent = Math.round(e * 100) + '\u00a0%';
+      if (k < 1) return requestAnimationFrame(tick);
+      setTimeout(() => {
+        ans.innerHTML = answer;
+        const b = ans.querySelector('.bubble');
+        b.classList.add('scan');
+        b.insertAdjacentHTML('beforeend', '<i class="laser"></i>');
+      }, 180);
+    };
+    requestAnimationFrame(tick);
+  }, { threshold: .5 });
+  io.observe(chat);
+})();
+</script>
+</body>
+</html>

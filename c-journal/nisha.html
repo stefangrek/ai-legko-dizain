@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Нейросети для автосервиса — ИИ — легко</title>
+<meta name="description" content="Ответы на отзывы, объяснение поломки, картинка для акции и ролик без съёмки — с ценой в рублях до запуска.">
+<link rel="preload" href="fonts/source-serif-4-cyrillic-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/golos-text-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body class="has-sticky">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-home" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M3.6 11.2 12 4.1l8.5 7.2M5.8 9.6v9.7c0 .5.4.8.8.8h3.7v-5.6h3.5v5.6h3.7c.5 0 .8-.3.8-.8V9.5"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4.2 6.3c0-1.2 1-2.1 2.2-2.1h11.3c1.2 0 2.1.9 2.1 2.1v7.9c0 1.2-1 2.1-2.1 2.1H11l-4.6 3.6v-3.6h0c-1.2 0-2.2-.9-2.2-2.1z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M8.3 9.1h7.4M8.3 12.2h4.6"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M12.1 4.8v14.5M4.8 12h14.5"/></symbol>
+    <symbol id="i-tasks" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4.1 5.9c0-.9.8-1.7 1.7-1.7h12.4c.9 0 1.7.8 1.7 1.7v12.3c0 .9-.8 1.7-1.7 1.7H5.8c-.9 0-1.7-.8-1.7-1.7z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="m4.4 16.3 4.4-4.5 3.4 3.3 2.3-2.2 5.1 4.6"/><circle cx="15.4" cy="8.6" r="1.6" fill="currentColor"/></symbol>
+    <symbol id="i-works" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M3.9 7.4c0-.9.7-1.6 1.6-1.6h4l1.9 2.1h7.1c.9 0 1.6.7 1.6 1.6v8.4c0 .9-.7 1.6-1.6 1.6h-13c-.9 0-1.6-.7-1.6-1.6z"/></symbol>
+    <symbol id="i-tools" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="m4.6 19.4 9.9-9.9M13.1 5.2l.6 2.1 2.1.6-2.1.6-.6 2.1-.6-2.1-2.1-.6 2.1-.6zM18.6 11.1l.4 1.4 1.4.4-1.4.4-.4 1.4-.4-1.4-1.4-.4 1.4-.4z"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 6.6c-1.9-1.5-4.6-2-7.7-1.8v13.1c3.1-.2 5.8.3 7.7 1.8 1.9-1.5 4.6-2 7.7-1.8V4.8c-3.1-.2-5.8.3-7.7 1.8zM12 6.6v13"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4.3 6.9c0-.9.8-1.7 1.7-1.7h12c.9 0 1.7.8 1.7 1.7v11.4c0 .9-.8 1.7-1.7 1.7H6c-.9 0-1.7-.8-1.7-1.7zM4.4 9.9h15.2M8.4 3.6v3.1M15.6 3.6v3.1"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="m8.6 14.6 2 1.8 4.6-4.3"/></symbol>
+    <symbol id="i-rub" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M8.6 19.6V4.6h4.6c2.4 0 4 1.5 4 3.8s-1.6 3.9-4 3.9H6.6M6.6 15.7h7.6"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4.4 4.6h6.1v6.1H4.4zM13.6 4.4h6v6.2h-6zM4.5 13.5h6v6.1h-6zM13.5 13.6h6.1v6h-6.1z"/></symbol>
+    <symbol id="i-net" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 3.9c.5 4.4 3.6 7.6 8.1 8.1-4.5.5-7.6 3.7-8.1 8.1-.5-4.4-3.6-7.6-8.1-8.1 4.5-.5 7.6-3.7 8.1-8.1z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M10.6 17.4a6.7 6.7 0 1 0 0-13.4 6.7 6.7 0 0 0 0 13.4zM15.5 15.6l4.6 4.5"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" d="M12 3.8c1.6 0 2.8 1.2 2.8 2.8v5.1c0 1.6-1.2 2.8-2.8 2.8s-2.8-1.2-2.8-2.8V6.6c0-1.6 1.2-2.8 2.8-2.8zM6.3 11.3c0 3.2 2.5 5.8 5.7 5.8s5.7-2.6 5.7-5.8M12 17.2v3.1"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M12 19.4V5M6 10.8 12 4.7l6.1 6.1"/></symbol>
+    <symbol id="i-lr" viewBox="0 0 28 28"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M10.5 8.5 5 14l5.5 5.5M17.5 8.5 23 14l-5.5 5.5"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14.8 5.5 8.3 12l6.5 6.5"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9.2 5.5 15.7 12l-6.5 6.5"/></symbol>
+    <symbol id="i-open" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 5.2v13.6M5.2 12h13.6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="m4.8 12.6 4.4 4.1 10-10.1"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#main">К содержанию</a>
+
+<aside class="rail" aria-label="Разделы">
+  <a class="logo" href="index.html">ИИ — легко</a>
+  <a class="btn btn--wide" href="#now"><svg aria-hidden="true"><use href="#i-plus"/></svg>Создать</a>
+  <nav aria-label="Оглавление">
+    <ul class="toc">
+      <li><a href="index.html"><svg aria-hidden="true"><use href="#i-home"/></svg><span class="t">Главная</span><span></span></a></li>
+      <li><a href="index.html#ask"><svg aria-hidden="true"><use href="#i-chat"/></svg><span class="t">Чат с нейросетью</span><span></span></a></li>
+      <li><a href="index.html#tasks"><svg aria-hidden="true"><use href="#i-tasks"/></svg><span class="t">Задания</span><span class="n">28</span></a></li>
+      <li><a href="index.html#tools"><svg aria-hidden="true"><use href="#i-tools"/></svg><span class="t">Инструменты</span><span></span></a></li>
+      <li><a href="#"><svg aria-hidden="true"><use href="#i-works"/></svg><span class="t">Мои работы</span><span></span></a></li>
+    </ul>
+    <p class="toc__group">Учиться</p>
+    <ul class="toc">
+      <li><a href="#learn"><svg aria-hidden="true"><use href="#i-book"/></svg><span class="t">Инструкции</span><span></span></a></li>
+      <li><a href="index.html#learn"><svg aria-hidden="true"><use href="#i-cal"/></svg><span class="t">Программы</span><span></span></a></li>
+      <li><a href="index.html#groups" aria-current="page"><svg aria-hidden="true"><use href="#i-grid"/></svg><span class="t">Виды дел</span><span class="n">34</span></a></li>
+    </ul>
+    <p class="toc__group">Справка</p>
+    <ul class="toc">
+      <li><a href="index.html#models"><svg aria-hidden="true"><use href="#i-net"/></svg><span class="t">Нейросети</span><span class="n">24</span></a></li>
+      <li><a href="index.html#prices"><svg aria-hidden="true"><use href="#i-rub"/></svg><span class="t">Цены</span><span></span></a></li>
+    </ul>
+  </nav>
+  <div class="rail__foot">
+    <p class="small muted">После входа — 30 ₽ в подарок на первые работы.</p>
+    <a class="btn btn--line btn--wide" href="#">Войти</a>
+  </div>
+</aside>
+
+<header class="topbar">
+  <a class="logo" href="index.html">ИИ — легко</a>
+  <div class="wallet"><a class="btn btn--line" href="#">Войти</a></div>
+</header>
+
+<div class="page">
+<main id="main">
+
+  <section class="niche-cover" id="top" aria-labelledby="h-top">
+    <div class="wrap">
+      <a class="crumb" href="index.html#groups"><svg aria-hidden="true"><use href="#i-left"/></svg>Все виды дел</a>
+      <div class="niche-cover__grid">
+        <div>
+          <h1 class="h1" id="h-top">Нейросети для автосервиса</h1>
+          <p class="lead">Запись, ответы «сколько стоит» и отзывы — пока вы под машиной.</p>
+          <div class="niche-facts">
+            <span><b>4</b>дела сразу</span>
+            <span><b class="num">0,50 ₽</b>за работу</span>
+            <span><b>6</b>пошаговых инструкций</span>
+          </div>
+        </div>
+        <figure>
+          <div class="ph ph--43"><img src="../assets/gruppa-stroyka.webp" alt="Стена мастерской с инструментами" width="960" height="720"></div>
+          <figcaption class="figcap">Снимок вашей мастерской подойдёт для картинки к акции — пример ниже.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="now" aria-labelledby="h-now">
+    <div class="wrap">
+      <div class="side" style="max-width:760px">
+        <h2 class="h2" id="h-now">Сделать прямо сейчас</h2>
+        <p>Без регистрации в десяти сервисах: пишете по-русски, цена видна до отправки.</p>
+      </div>
+
+      <div class="now__lead">
+        <div class="act">
+          <h3 class="h3">Ответ на отзыв</h3>
+          <p class="act__p">Вставьте отзыв клиента — нейросеть напишет вежливый ответ и пригласит приехать снова. Даже на злой отзыв.</p>
+          <div class="act-row"><span class="price-big">0,50 ₽</span><a class="btn" href="#">Ответить на отзыв</a></div>
+          <ol class="steps" aria-label="Как это работает">
+            <li>Скопируйте отзыв с карт или из мессенджера.</li>
+            <li>Вставьте его в строку и нажмите «Ответить».</li>
+            <li>Проверьте ответ и вставьте его под отзывом.</li>
+          </ol>
+        </div>
+        <div class="draw" id="review-draw">
+          <div class="lead-notes" style="min-height:64px" aria-hidden="true">
+            <p class="note" style="left:0;top:4px;--d:0s">вставьте отзыв<br>как есть</p>
+            <svg style="left:150px;top:14px;width:70px;height:60px" viewBox="0 0 70 60"><path class="ink-line" pathLength="1" style="--d:.25s" d="M4 10 C 30 6, 52 20, 60 54 M50 46 C 54 49, 57 52, 60 56 C 62 51, 64 47, 66 43"/></svg>
+          </div>
+          <div class="chat">
+            <p class="chat__me">Напишите вежливый ответ на отзыв клиента автосервиса: «Ждал машину три часа вместо часа, никто не позвонил».</p>
+            <div class="chat__bot">
+              <span class="chat__who">Нейросеть</span>
+              <p>Здравствуйте, Андрей! Спасибо, что написали, и простите за ожидание. Вы правы: мы должны были позвонить сразу, как стало понятно, что ремонт затянется.</p>
+              <p>Мы договорились с мастерами сообщать о задержке заранее. Будем рады видеть вас снова.</p>
+            </div>
+            <p class="chat__done ann"><svg aria-hidden="true" style="display:inline;vertical-align:-4px;width:22px;height:22px"><use href="#i-check"/></svg> Готово: вежливый ответ и приглашение приехать снова<svg class="ann__ring" viewBox="0 0 200 60" preserveAspectRatio="none" aria-hidden="true"><path class="ink-line" pathLength="1" style="--d:.8s" d="M22 40 C 8 22, 52 6, 104 5 C 160 4, 196 14, 194 31 C 192 50, 140 57, 92 56 C 44 55, 4 47, 8 31 C 11 20, 34 12, 62 9"/></svg></p>
+          </div>
+          <div class="lead-notes" aria-hidden="true">
+            <svg style="left:40px;top:0;width:40px;height:52px" viewBox="0 0 40 52"><path class="ink-line" pathLength="1" style="--d:1.3s" d="M30 50 C 18 42, 12 28, 14 4 M6 13 C 9 10, 12 6, 14 3 C 17 7, 20 10, 23 13"/></svg>
+            <p class="note" style="left:84px;top:24px;--d:1.55s">копируете и вставляете<br>под отзывом на картах</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="now__more" style="margin-top:56px">
+        <article class="act">
+          <div class="mini-chat" aria-label="Пример">
+            <p class="q">Объясните простыми словами, зачем менять тормозные колодки</p>
+            <p class="a">Колодки стираются от каждого торможения, как подошва у ботинка. Когда их почти не осталось, машина тормозит дольше, а металл царапает диск — и тогда менять придётся и его.</p>
+          </div>
+          <div class="cap"><h3 class="cap__name" style="font:520 var(--fs-h3)/1.2 var(--serif)">Объяснить клиенту поломку</h3><span class="cap__price">0,50 ₽</span></div>
+          <p class="act__p">Клиент поймёт, за что платит, и не будет спорить со сметой.</p>
+          <a class="btn btn--line" href="#">Объяснить поломку</a>
+        </article>
+        <article class="act">
+          <div class="ph ph--45">
+            <img src="../assets/gruppa-stroyka.webp" alt="Фото мастерской с надписью акции поверх" width="960" height="720" loading="lazy">
+            <span class="stamp" style="top:10px;bottom:auto">фото-пример</span>
+            <div class="promo" aria-hidden="true"><b>Замена масла с фильтром</b><span>Запишитесь заранее — без очереди</span></div>
+          </div>
+          <div class="cap"><h3 class="cap__name" style="font:520 var(--fs-h3)/1.2 var(--serif)">Картинка для акции</h3><span class="cap__price">9 ₽</span></div>
+          <p class="act__p">Фото мастерской и строка про акцию — картинка для соцсетей и мессенджеров.</p>
+          <a class="btn btn--line" href="#">Сделать картинку</a>
+        </article>
+        <article class="act">
+          <div class="ph ph--45">
+            <img src="../assets/kadr-iz-filma.webp" alt="Салон микроавтобуса, кадр из ролика" width="960" height="1200" loading="lazy">
+            <span class="stamp">фото-пример</span>
+          </div>
+          <div class="cap"><h3 class="cap__name" style="font:520 var(--fs-h3)/1.2 var(--serif)">Ролик без съёмки</h3><span class="cap__price">70 ₽</span></div>
+          <p class="act__p">Опишите словами, что показать, — нейросеть сделает короткий ролик для соцсетей.</p>
+          <a class="btn btn--line" href="#">Сделать ролик</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec--band svc" id="more" aria-labelledby="h-more">
+    <div class="wrap">
+      <div class="side" style="max-width:760px">
+        <h2 class="h2" id="h-more">Ещё — то, за что исполнители берут десятки тысяч</h2>
+        <p>Это можно сделать самому по инструкции. Дольше, чем одна кнопка, но без подрядчика.</p>
+      </div>
+      <table class="ledger">
+        <caption class="sr">Что можно сделать по инструкции и сколько это стоит у исполнителей</caption>
+        <thead><tr><th scope="col">Что</th><th scope="col">У исполнителей, ориентир</th><th scope="col" class="r">Здесь</th></tr></thead>
+        <tbody>
+          <tr><td><span class="svc__t">Бот записи на ремонт</span><span class="svc__d">Клиент сам выбирает время, вам приходит заявка</span></td><td class="them">15–50 тыс. ₽</td><td class="r ours"><a href="#">Пошаговая инструкция</a></td></tr>
+          <tr><td><span class="svc__t">Калькулятор ТО</span><span class="svc__d">Марка, пробег — и примерная цена обслуживания</span></td><td class="them">5–20 тыс. ₽</td><td class="r ours"><a href="#">Пошаговая инструкция</a></td></tr>
+          <tr><td><span class="svc__t">Сайт с услугами и ценами</span><span class="svc__d">Одна страница: услуги, цены, адрес, запись</span></td><td class="them">10–30 тыс. ₽</td><td class="r ours"><a href="#">Пошаговая инструкция</a></td></tr>
+          <tr><td><span class="svc__t">Советы водителям в роликах</span><span class="svc__d">Короткие ролики, которые приводят клиентов из соцсетей</span></td><td class="them"><span aria-hidden="true">—</span><span class="sr">нет ориентира</span></td><td class="r ours"><a href="#">Пошаговая инструкция</a></td></tr>
+        </tbody>
+      </table>
+      <p class="foot-note">Цены исполнителей — ориентир, а не точная цена. Мы не обещаем дохода — только показываем, что можно сделать самому.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="learn" aria-labelledby="h-learn">
+    <div class="wrap split">
+      <div class="side">
+        <h2 class="h2" id="h-learn">Научиться самому</h2>
+        <p>Шесть инструкций для автосервиса: по шагам, с готовыми запросами и картинками каждого экрана.</p>
+      </div>
+      <div class="guides" style="margin-top:0">
+        <a class="guide" href="#"><b>Ответы на отзывы за 10 минут в неделю</b><span class="meta"><span class="lvl">Легко</span><span>10 минут</span></span></a>
+        <a class="guide" href="#"><b>Бот записи на ремонт в Телеграме</b><span class="meta"><span class="lvl">Средне</span><span>1 час</span></span></a>
+        <a class="guide" href="#"><b>Калькулятор ТО для сайта</b><span class="meta"><span class="lvl">Средне</span><span>40 минут</span></span></a>
+        <a class="guide" href="#"><b>Картинка для акции из фото мастерской</b><span class="meta"><span class="lvl">Легко</span><span>15 минут</span></span></a>
+        <a class="guide" href="#"><b>Ролик «совет водителю» без съёмки</b><span class="meta"><span class="lvl">Легко</span><span>20 минут</span></span></a>
+        <a class="guide" href="#"><b>Как объяснить смету простыми словами</b><span class="meta"><span class="lvl">Легко</span><span>10 минут</span></span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="similar" aria-labelledby="h-similar">
+    <div class="wrap">
+      <div class="side"><h2 class="h2" id="h-similar">Похожие дела</h2></div>
+      <nav class="similar" aria-label="Похожие дела">
+        <a class="group" href="#"><span class="ph"><img src="../assets/remont-po-foto.webp" alt="" width="960" height="1200" loading="lazy"></span><span><span class="group__t">Ремонт и отделка</span><span class="group__ex">Сметы, фото «до и после», ответы клиентам</span></span></a>
+        <a class="group" href="#"><span class="ph"><img src="../assets/gruppa-nedvizhimost.webp" alt="" width="960" height="720" loading="lazy"></span><span><span class="group__t">Дома и бани</span><span class="group__ex">Проекты словами, картинки для объявлений</span></span></a>
+        <a class="group" href="#"><span class="ph"><img src="../assets/gruppa-torgovlya.webp" alt="" width="960" height="720" loading="lazy"></span><span><span class="group__t">Переезды и грузоперевозки</span><span class="group__ex">Расчёт стоимости, объявления, ответы</span></span></a>
+      </nav>
+    </div>
+  </section>
+
+  <section class="final" aria-labelledby="h-final">
+    <div class="wrap">
+      <h2 class="h2" id="h-final">Начните с ответа на последний отзыв</h2>
+      <p>Это займёт минуту и стоит 0,50 ₽. После входа — 30 ₽ в подарок.</p>
+      <div class="final__act">
+        <a class="btn btn--marker" href="#">Войти и ответить на отзыв</a>
+        <a href="index.html#groups">Посмотреть другие дела</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <p>ИИ — легко, 2026</p>
+    <nav aria-label="Служебные ссылки"><a href="index.html#prices">Цены</a><a href="#learn">Инструкции</a><a href="#">Помощь</a><a href="#">Оферта</a><a href="#">Обработка данных</a></nav>
+  </div>
+</footer>
+</div>
+
+<div class="sticky-cta" id="sticky"><a class="btn" href="#">Ответить на отзыв — 0,50 ₽</a></div>
+
+<nav class="tabbar" aria-label="Разделы">
+  <a class="tab" href="index.html"><svg aria-hidden="true"><use href="#i-home"/></svg><span>Главная</span></a>
+  <a class="tab" href="index.html#ask"><svg aria-hidden="true"><use href="#i-chat"/></svg><span>Чат</span></a>
+  <a class="tab tab--make" href="#now"><span class="tab__plus"><svg aria-hidden="true"><use href="#i-plus"/></svg></span>Создать</a>
+  <a class="tab" href="index.html#tasks"><svg aria-hidden="true"><use href="#i-tasks"/></svg><span>Задания</span></a>
+  <a class="tab" href="#"><svg aria-hidden="true"><use href="#i-works"/></svg><span>Работы</span></a>
+</nav>
+
+<script>
+(() => {
+
+  // Кольца пометок: пересчитываем контур под реальный размер, чтобы линия была ровной толщины и рисовалась целиком
+  const fitRings = () => document.querySelectorAll('.ann__ring').forEach(svg => {
+    const path = svg.querySelector('path'); const [, , vw, vh] = (svg.dataset.vb || (svg.dataset.vb = svg.getAttribute('viewBox'))).split(' ').map(Number);
+    const d0 = path.dataset.d || (path.dataset.d = path.getAttribute('d'));
+    const { width: w, height: h } = svg.getBoundingClientRect(); if (!w || !h) return;
+    let i = 0; path.setAttribute('d', d0.replace(/-?\d+(\.\d+)?/g, n => (+n * (i++ % 2 ? h / vh : w / vw)).toFixed(1)));
+    svg.setAttribute('viewBox', `0 0 ${w.toFixed(1)} ${h.toFixed(1)}`);
+  });
+  fitRings(); addEventListener('resize', fitRings); document.fonts && document.fonts.ready.then(fitRings);
+  const $$ = s => [...document.querySelectorAll(s)];
+  const draw = $$('.draw');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-drawn'); io.unobserve(e.target); } }), { threshold: .45 });
+    draw.forEach(d => io.observe(d));
+    // Прилипающая кнопка появляется, когда первый экран ушёл вверх
+    const sticky = document.getElementById('sticky');
+    new IntersectionObserver(([e]) => sticky.classList.toggle('is-on', !e.isIntersecting && e.boundingClientRect.top < 0)).observe(document.querySelector('.niche-cover'));
+  } else draw.forEach(d => d.classList.add('is-drawn'));
+})();
+</script>
+</body>
+</html>

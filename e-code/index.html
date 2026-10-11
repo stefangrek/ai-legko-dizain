@@ -1,0 +1,679 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ИИ — легко: нейросети для вашего дела</title>
+<meta name="description" content="Попросите нейросеть словами — она сделает: ответ клиенту, фото товара, открытку, ролик. Оплата в рублях за готовую работу, от 0,50 ₽. Пошаговые инструкции.">
+<link rel="preload" href="fonts/geologica-cyrillic-shrp-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/jetbrains-mono-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="theme-color" content="#151B24">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-4.5v-6h-5v6H5a1 1 0 0 1-1-1z"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4.5h14a1 1 0 0 1 1 1V16a1 1 0 0 1-1 1h-8.5L6 20.5V17H5a1 1 0 0 1-1-1V5.5a1 1 0 0 1 1-1z"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="m4 17.5 5-4.5 4 3.5 3-2.5 4.5 3.5"/></symbol>
+    <symbol id="i-split" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="14" rx="2"/><path d="M12 3v18"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5c2.5-1 5.5-1 8 .5 2.5-1.5 5.5-1.5 8-.5V19c-2.5-1-5.5-1-8 .5-2.5-1.5-5.5-1.5-8-.5z"/><path d="M12 6v13.5"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-rub" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M10 7.5h3a2.25 2.25 0 0 1 0 4.5h-3zm0 4.5v5m-1.5-2.5H13"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="9" y="3.5" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m14.5 6-6 6 6 6"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9.5 6 6 6-6 6"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.5v15l12.5-7.5z" fill="currentColor"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11m-5-5 5 5 5-5M5 20h14"/></symbol>
+    <symbol id="i-lr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 7-5 5 5 5M15 7l5 5-5 5"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-again" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4.5v4h-4"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#content">К содержанию</a>
+
+<!-- Компьютер: меню разделов слева -->
+<aside class="side" aria-label="Разделы">
+  <a class="logo" href="index.html">ИИ — легко</a>
+  <a class="btn btn-go" href="#demo"><svg class="ico"><use href="#i-plus"/></svg>Создать</a>
+  <nav class="snav">
+    <a href="index.html" aria-current="page"><svg class="ico"><use href="#i-home"/></svg>Главная</a>
+    <a href="#demo"><svg class="ico"><use href="#i-chat"/></svg>Чат с нейросетью</a>
+    <a href="#tasks"><svg class="ico"><use href="#i-grid"/></svg>Готовые задания</a>
+    <a href="#tools"><svg class="ico"><use href="#i-split"/></svg>Инструменты</a>
+    <a href="#learn"><svg class="ico"><use href="#i-book"/></svg>Инструкции</a>
+    <a href="#learn"><svg class="ico"><use href="#i-cal"/></svg>Программы</a>
+    <a href="#"><svg class="ico"><use href="#i-image"/></svg>Мои работы</a>
+    <a href="#prices"><svg class="ico"><use href="#i-rub"/></svg>Цены</a>
+  </nav>
+  <div class="side-foot">
+    <p>После входа — 30&nbsp;₽ в&nbsp;подарок. Хватит на&nbsp;60&nbsp;ответов или 3&nbsp;картинки.</p>
+    <a class="btn btn-line btn-sm" href="#">Войти</a>
+  </div>
+</aside>
+
+<!-- Компьютер: статус-бар, как в редакторе кода -->
+<div class="status">
+  <span><i aria-hidden="true"></i>24&nbsp;нейросети на&nbsp;связи</span>
+  <span>Цена видна до&nbsp;запуска</span>
+  <span class="grow"></span>
+  <span class="end">Баланс <b class="rub">0&nbsp;₽</b></span>
+  <span class="end">После входа <b class="rub">+30&nbsp;₽</b></span>
+</div>
+
+<!-- Телефон и планшет: шапка -->
+<header class="top">
+  <a class="logo" href="index.html">ИИ — легко</a>
+  <a class="btn btn-line" href="#">Войти</a>
+</header>
+
+<main class="main" id="content">
+<div class="wrap">
+
+  <!-- Первый экран: попросите — и сразу результат -->
+  <section class="hero" aria-labelledby="h1">
+    <div class="hero-text">
+      <h1 id="h1">Опишите задачу словами&nbsp;— нейросеть сделает</h1>
+      <p class="lead">Ответ клиенту, фото товара, открытка, ролик. Платите рублями только за&nbsp;готовую работу.</p>
+    </div>
+
+    <div class="demo" id="demo">
+      <form class="composer" id="composer" onsubmit="return false">
+        <div class="ctabs" role="tablist" aria-label="Что сделать">
+          <button type="button" role="tab" aria-selected="false" data-mode="text">Написать</button>
+          <button type="button" role="tab" aria-selected="true" data-mode="image">Картинка</button>
+          <button type="button" role="tab" aria-selected="false" data-mode="video">Видео</button>
+          <button type="button" role="tab" aria-selected="false" data-mode="song">Песня</button>
+        </div>
+        <div class="cbody">
+          <div class="attach" id="attach" hidden><img src="" alt=""><span>ваше-фото.jpg</span></div>
+          <div class="cfield" id="cfield">
+            <span class="prompt" aria-hidden="true">›</span>
+            <div class="box">
+              <label class="vh" for="ask">Попросите нейросеть</label>
+              <textarea id="ask" rows="2" placeholder="Попросите нейросеть"></textarea>
+              <div class="ghost" id="ghost" aria-hidden="true"></div>
+            </div>
+          </div>
+          <div class="crow">
+            <button type="button" class="cbtn" aria-label="Сказать голосом"><svg class="ico"><use href="#i-mic"/></svg></button>
+            <span class="cprice" id="cprice">≈ <span class="rub">9&nbsp;₽</span> за&nbsp;картинку</span>
+            <button type="submit" class="csend" id="csend" aria-label="Сделать"><svg class="ico" aria-hidden="true"><use href="#i-send"/></svg><span class="lbl-send" aria-hidden="true">Сделать</span></button>
+          </div>
+        </div>
+      </form>
+      <div class="thread" id="thread" aria-live="polite">
+        <p class="hint">Здесь появится результат</p>
+      </div>
+    </div>
+
+    <div class="hero-more">
+      <div class="hero-act">
+        <a class="btn btn-go" href="#"><span>Попробовать — <span class="rub">30&nbsp;₽</span> в&nbsp;подарок</span></a>
+        <a href="#groups">Выбрать своё дело</a>
+      </div>
+      <p class="hero-note">А&nbsp;пошаговые инструкции научат делать это самому.</p>
+      <ul class="facts">
+        <li><b>34</b>вида дел</li>
+        <li><b>28</b>готовых заданий</li>
+        <li><b>24</b>нейросети</li>
+        <li><b class="rub">0,50&nbsp;₽</b>минимум за&nbsp;работу</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Чем вы занимаетесь -->
+  <section class="sec" id="groups" aria-labelledby="h-groups">
+    <div class="sec-head">
+      <div>
+        <h2 class="h2" id="h-groups">Чем вы занимаетесь?</h2>
+        <p class="sub">Покажем, что нейросети уже умеют в&nbsp;вашем деле, и&nbsp;сколько это стоит.</p>
+      </div>
+    </div>
+    <div class="search">
+      <svg class="ico" aria-hidden="true"><use href="#i-search"/></svg>
+      <label class="vh" for="q">Поиск по делам</label>
+      <input id="q" type="search" autocomplete="off" placeholder="Например: маникюр, автосервис, торты">
+    </div>
+    <p class="often">Часто ищут: <a href="nisha.html">автосервис</a>, <a href="#">маникюр</a>, <a href="#">Wildberries</a>, <a href="#">репетитор</a></p>
+
+    <div class="groups" id="glist">
+      <a class="group" href="#" style="--c:var(--g-rose)" data-k="красота услуги маникюр парикмахер массаж салон брови ресницы косметолог">
+        <div><b>Красота и&nbsp;услуги</b><span>маникюр, парикмахерская, массаж</span></div>
+        <img src="../assets/gruppa-uslugi.webp" alt="" loading="lazy" width="960" height="720">
+      </a>
+      <a class="group" href="#" style="--c:var(--g-butter)" data-k="торговля маркетплейсы ozon wildberries озон вайлдберриз магазин авито продавец селлер">
+        <div><b>Торговля и&nbsp;маркетплейсы</b><span>Ozon и&nbsp;Wildberries, магазин, Авито</span></div>
+        <img src="../assets/gruppa-torgovlya.webp" alt="" loading="lazy" width="960" height="720">
+      </a>
+      <a class="group" href="#" style="--c:var(--g-apricot)" data-k="еда кафе выпечка торты пекарня доставка ресторан кондитер">
+        <div><b>Еда</b><span>кафе, выпечка на&nbsp;заказ, доставка</span></div>
+        <img src="../assets/gruppa-eda.webp" alt="" loading="lazy" width="960" height="720">
+      </a>
+      <a class="group" href="nisha.html" style="--c:var(--g-steel)" data-k="ремонт стройка авто автосервис шиномонтаж отделка баня дом переезд мастер">
+        <div><b>Ремонт, стройка, авто</b><span>автосервис, ремонт квартир, бани</span></div>
+        <img src="../assets/gruppa-stroyka.webp" alt="" loading="lazy" width="960" height="720">
+      </a>
+      <a class="group" href="#" style="--c:var(--g-sage)" data-k="недвижимость риелтор аренда посуточно квартира агент">
+        <div><b>Недвижимость</b><span>риелтор, аренда посуточно</span></div>
+        <img src="../assets/gruppa-nedvizhimost.webp" alt="" loading="lazy" width="960" height="720">
+      </a>
+      <a class="group" href="#" style="--c:var(--g-aqua)" data-k="здоровье дети учёба учеба репетитор школа детский центр фитнес тренер психолог">
+        <div><b>Здоровье, дети, учёба</b><span>репетитор, детский центр, фитнес</span></div>
+        <img src="../assets/gruppa-zdorovie-ucheba.webp" alt="" loading="lazy" width="960" height="720">
+      </a>
+      <a class="group" href="#" style="--c:var(--g-lilac)" data-k="офис продажи маркетинг письма таблицы презентации бухгалтер менеджер">
+        <div><b>Офис, продажи, маркетинг</b><span>письма, таблицы, презентации</span></div>
+        <img src="../assets/gruppa-ofis.webp" alt="" loading="lazy" width="960" height="720">
+      </a>
+      <a class="group" href="#" style="--c:var(--g-mauve)" data-k="для себя семья открытки фото дети поездки праздник день рождения">
+        <div><b>Для себя и&nbsp;семьи</b><span>открытки, семейные фото, поездки</span></div>
+        <img src="../assets/gruppa-dlya-sebya.webp" alt="" loading="lazy" width="960" height="720">
+      </a>
+      <p class="nores" id="nores" hidden>Такого дела пока нет в&nbsp;списке. Опишите задачу в&nbsp;<a href="#demo">строке запроса</a> — нейросеть поймёт и&nbsp;так.</p>
+    </div>
+  </section>
+
+  <!-- Готовые задания -->
+  <section class="sec" id="tasks" aria-labelledby="h-tasks">
+    <div class="sec-head">
+      <div>
+        <h2 class="h2" id="h-tasks">Одно фото — готовый результат</h2>
+        <p class="sub">Загрузите своё фото и&nbsp;нажмите «Сделать». Запрос для нейросети уже написан, цена видна до&nbsp;запуска.</p>
+      </div>
+      <div class="rail-ctl">
+        <button type="button" data-dir="-1" aria-label="Листать назад"><svg class="ico"><use href="#i-left"/></svg></button>
+        <button type="button" data-dir="1" aria-label="Листать вперёд"><svg class="ico"><use href="#i-right"/></svg></button>
+      </div>
+    </div>
+    <div class="filters" role="group" aria-label="Показать задания">
+      <button type="button" aria-pressed="true" data-f="all">Все</button>
+      <button type="button" aria-pressed="false" data-f="sell">Для продаж</button>
+      <button type="button" aria-pressed="false" data-f="photo">Фото и&nbsp;портреты</button>
+      <button type="button" aria-pressed="false" data-f="fest">Праздники</button>
+      <button type="button" aria-pressed="false" data-f="move">Видео и&nbsp;песни</button>
+    </div>
+    <div class="rail" id="rail">
+      <a class="task" href="#" data-c="sell">
+        <div class="ph"><img src="../assets/tovar-na-belom-fone.webp" alt="Красные туфли на белом фоне" loading="lazy"><span class="ex">фото-пример</span></div>
+        <h3>Товар на&nbsp;белом фоне</h3>
+        <p class="meta"><span>Загрузите фото товара</span><b>9&nbsp;₽</b></p>
+      </a>
+      <a class="task" href="#" data-c="sell">
+        <div class="ph"><img src="../assets/tovar-v-interere.webp" alt="Чашка кофе на деревянном столе" loading="lazy"><span class="ex">фото-пример</span></div>
+        <h3>Товар в&nbsp;интерьере</h3>
+        <p class="meta"><span>Загрузите фото товара</span><b>9&nbsp;₽</b></p>
+      </a>
+      <a class="task" href="#" data-c="sell">
+        <div class="ph"><img src="../assets/odezhda-na-modeli.webp" alt="Девушка в свитере и шляпе" loading="lazy"><span class="ex">фото-пример</span></div>
+        <h3>Одежда на&nbsp;модели</h3>
+        <p class="meta"><span>Загрузите фото вещи</span><b>9&nbsp;₽</b></p>
+      </a>
+      <a class="task" href="#" data-c="sell">
+        <div class="ph"><img src="../assets/kartochka-s-preimushchestvami.webp" alt="" loading="lazy"><span class="ex">фото-пример</span>
+          <div class="ov-card" aria-hidden="true"><b>Крем для рук</b><span>Без запаха</span><span>Для сухой кожи</span><span>50 мл</span></div>
+        </div>
+        <h3>Карточка с&nbsp;преимуществами</h3>
+        <p class="meta"><span>Фото товара и&nbsp;3&nbsp;слова о&nbsp;нём</span><b>30&nbsp;₽</b></p>
+      </a>
+      <a class="task" href="#" data-c="sell">
+        <div class="ph"><img src="../assets/oblozhka-dlya-youtube.webp" alt="" loading="lazy"><span class="ex">фото-пример</span>
+          <p class="ov-cover" aria-hidden="true"><span>Как я начала рисовать после выхода на&nbsp;пенсию</span></p>
+        </div>
+        <h3>Обложка для видео</h3>
+        <p class="meta"><span>Кадр и&nbsp;название ролика</span><b>30&nbsp;₽</b></p>
+      </a>
+      <a class="task" href="#" data-c="photo">
+        <div class="ph"><img src="../assets/delovoj-portret.webp" alt="Мужчина в очках на сером фоне, деловой портрет" loading="lazy"><span class="ex">фото-пример</span></div>
+        <h3>Деловой портрет</h3>
+        <p class="meta"><span>Ваше обычное фото</span><b>9&nbsp;₽</b></p>
+      </a>
+      <a class="task" href="#" data-c="photo">
+        <div class="ph"><img src="../assets/osennyaya-fotosessiya.webp" alt="Девушка в красном на осенней аллее" loading="lazy"><span class="ex">фото-пример</span></div>
+        <h3>Осенняя фотосессия</h3>
+        <p class="meta"><span>Ваше фото в&nbsp;полный рост</span><b>9&nbsp;₽</b></p>
+      </a>
+      <a class="task" href="#" data-c="photo">
+        <div class="ph"><img src="../assets/vosstanovit-staroe-foto.webp" alt="Восстановленное семейное фото начала века" loading="lazy"><span class="ex">фото-пример</span></div>
+        <h3>Восстановить старое фото</h3>
+        <p class="meta"><span>Снимок старой карточки</span><b>9&nbsp;₽</b></p>
+      </a>
+      <a class="task" href="#" data-c="photo">
+        <div class="ph"><img src="../assets/raskrasit-foto.webp" alt="Цветное фото крепости, раскрашенное из чёрно-белого" loading="lazy"><span class="ex">фото-пример</span></div>
+        <h3>Раскрасить ч/б&nbsp;фото</h3>
+        <p class="meta"><span>Чёрно-белый снимок</span><b>9&nbsp;₽</b></p>
+      </a>
+      <a class="task" href="#" data-c="fest">
+        <div class="ph"><img src="../assets/novogodnyaya-otkrytka.webp" alt="" loading="lazy"><span class="ex">фото-пример</span>
+          <p class="ov-greet" aria-hidden="true">С&nbsp;Новым годом, родные!<small>Обнимаем, ждём в&nbsp;гости</small></p>
+        </div>
+        <h3>Новогодняя открытка</h3>
+        <p class="meta"><span>Кому и&nbsp;что пожелать</span><b>30&nbsp;₽</b></p>
+      </a>
+      <a class="task" href="#" data-c="move">
+        <div class="ph"><img src="../assets/ozhivit-foto.webp" alt="" loading="lazy"><span class="ex">фото-пример</span>
+          <div class="ov-player" aria-hidden="true"><span class="pl"><svg><use href="#i-play"/></svg></span><span class="tl"><b>Прабабушка улыбается</b><span class="bar"></span></span></div>
+        </div>
+        <h3>Оживить фото</h3>
+        <p class="meta"><span>Фото с&nbsp;лицом</span><b>40&nbsp;₽</b></p>
+      </a>
+      <a class="task" href="#" data-c="move">
+        <div class="ph"><img src="../assets/rolik-po-opisaniyu.webp" alt="" loading="lazy"><span class="ex">фото-пример</span>
+          <div class="ov-player" aria-hidden="true"><span class="pl"><svg><use href="#i-play"/></svg></span><span class="tl"><b>Утро в&nbsp;нашей кофейне</b><span class="bar"></span></span></div>
+        </div>
+        <h3>Ролик по&nbsp;описанию</h3>
+        <p class="meta"><span>Пара предложений словами</span><b>70&nbsp;₽</b></p>
+      </a>
+      <a class="task" href="#" data-c="move fest">
+        <div class="ph"><img src="../assets/pesnya-na-den-rozhdeniya.webp" alt="" loading="lazy"><span class="ex">фото-пример</span>
+          <div class="ov-player" aria-hidden="true"><span class="pl"><svg><use href="#i-play"/></svg></span><span class="tl"><b>Галине — с&nbsp;днём рождения</b><span class="wave"><i style="height:40%"></i><i style="height:80%"></i><i style="height:55%"></i><i style="height:100%"></i><i style="height:65%"></i><i style="height:35%"></i><i style="height:75%"></i><i style="height:90%"></i><i style="height:45%"></i><i style="height:70%"></i><i style="height:30%"></i><i style="height:60%"></i><i style="height:85%"></i><i style="height:50%"></i></span></span></div>
+        </div>
+        <h3>Песня на&nbsp;день рождения</h3>
+        <p class="meta"><span>Имя и&nbsp;пара фактов</span><b>32&nbsp;₽</b></p>
+      </a>
+    </div>
+  </section>
+
+  <!-- Инструменты было / стало -->
+  <section class="sec" id="tools" aria-labelledby="h-tools">
+    <div class="plane">
+      <div class="sec-head">
+        <div>
+          <h2 class="h2" id="h-tools">Было — стало</h2>
+          <p class="sub">Простые инструменты для фото. Потяните ползунок, чтобы сравнить.</p>
+        </div>
+      </div>
+      <div class="tools">
+        <div class="tool-list" role="tablist" aria-label="Инструменты">
+          <button type="button" role="tab" aria-selected="true" data-t="udalit-fon" data-p="4" data-a="Апельсин на столе" data-b="Апельсин без фона"><b>Удалить фон</b><span class="p">4&nbsp;₽</span><span class="long">Для карточки товара и&nbsp;объявления</span></button>
+          <button type="button" role="tab" aria-selected="false" data-t="uluchshit-kachestvo" data-p="4" data-a="Размытый снимок гор" data-b="Чёткий снимок гор"><b>Улучшить качество</b><span class="p">4&nbsp;₽</span><span class="long">Размытое станет чётким</span></button>
+          <button type="button" role="tab" aria-selected="false" data-t="vosstanovit-staroe-foto" data-p="9" data-a="Старое фото с заломами" data-b="Восстановленное фото"><b>Восстановить старое фото</b><span class="p">9&nbsp;₽</span><span class="long">Уберёт заломы, пятна и&nbsp;царапины</span></button>
+          <button type="button" role="tab" aria-selected="false" data-t="raskrasit-foto" data-p="9" data-a="Чёрно-белое фото крепости" data-b="Цветное фото крепости"><b>Раскрасить фото</b><span class="p">9&nbsp;₽</span><span class="long">Чёрно-белое станет цветным</span></button>
+        </div>
+        <div>
+          <div class="ba" id="ba">
+            <img class="before" id="baA" src="../assets/udalit-fon-before.webp" alt="Было: апельсин на столе">
+            <img class="after" id="baB" src="../assets/udalit-fon-after.webp" alt="Стало: апельсин без фона">
+            <span class="lbl l" aria-hidden="true">Было</span><span class="lbl r" aria-hidden="true">Стало</span>
+            <span class="line"></span>
+            <input type="range" min="0" max="100" value="50" id="baR" aria-label="Сравнить: было и стало">
+            <span class="knob"><svg class="ico"><use href="#i-lr"/></svg></span>
+          </div>
+          <div class="tool-act">
+            <a class="btn btn-go" href="#" id="baGo"><span>Загрузить своё фото — <span class="rub">4&nbsp;₽</span></span></a>
+            <p>Не понравится — нажмите «Ещё вариант», он стоит столько же.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Сколько стоит -->
+  <section class="sec" id="prices" aria-labelledby="h-prices">
+    <div class="sec-head">
+      <div>
+        <h2 class="h2" id="h-prices">Сколько стоит сделать</h2>
+        <p class="sub">Платите за&nbsp;готовую работу, без подписки. Цена видна до&nbsp;запуска.</p>
+      </div>
+    </div>
+    <div class="prices">
+      <ul class="plist">
+        <li><span class="n">Ответ клиенту на&nbsp;отзыв</span><span class="dots"></span><span class="p">0,50&nbsp;₽</span></li>
+        <li><span class="n">Пост для соцсетей</span><span class="dots"></span><span class="p">5,40&nbsp;₽</span></li>
+        <li><span class="n">Удалить фон</span><span class="dots"></span><span class="p">4&nbsp;₽</span></li>
+        <li><span class="n">Фото товара на&nbsp;белом фоне</span><span class="dots"></span><span class="p">9&nbsp;₽</span></li>
+        <li><span class="n">Открытка с&nbsp;надписью</span><span class="dots"></span><span class="p">30&nbsp;₽</span></li>
+        <li><span class="n">Оживить фото — ролик</span><span class="dots"></span><span class="p">40&nbsp;₽</span></li>
+        <li><span class="n">Песня</span><span class="dots"></span><span class="p">32&nbsp;₽</span></li>
+        <li><span class="n">Озвучка текста</span><span class="dots"></span><span class="p">30&nbsp;₽</span></li>
+      </ul>
+      <div class="calc">
+        <h3 id="h-calc">Если пополнить на</h3>
+        <div class="seg" role="group" aria-labelledby="h-calc">
+          <button type="button" aria-pressed="false" data-s="300">300&nbsp;₽</button>
+          <button type="button" aria-pressed="true" data-s="500">500&nbsp;₽</button>
+          <button type="button" aria-pressed="false" data-s="1000">1&nbsp;000&nbsp;₽</button>
+          <button type="button" aria-pressed="false" data-s="2000">2&nbsp;000&nbsp;₽</button>
+        </div>
+        <p class="calc-lead">хватит примерно на&nbsp;любое из&nbsp;этого:</p>
+        <div class="calc-out" aria-live="polite">
+          <div><b data-u="0.5">1&nbsp;000</b><span data-w="ответ">ответов</span></div>
+          <div><b data-u="9">55</b><span data-w="картинка">картинок</span></div>
+          <div><b data-u="32">15</b><span data-w="песня">песен</span></div>
+          <div><b data-u="40">12</b><span data-w="ролик">роликов</span></div>
+        </div>
+        <p class="note">После входа — ещё 30&nbsp;₽ в&nbsp;подарок.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Честное сравнение -->
+  <section class="sec" aria-labelledby="h-cmp">
+    <div class="sec-head">
+      <div>
+        <h2 class="h2" id="h-cmp">Честно: сколько это стоит у&nbsp;исполнителя</h2>
+        <p class="sub">Цены исполнителей — ориентир, у&nbsp;вас в&nbsp;городе может быть иначе.</p>
+      </div>
+    </div>
+    <div class="cmp">
+      <div class="cmp-item">
+        <h3 class="h3">Фото товара</h3>
+        <div class="cmp-row"><span>У&nbsp;исполнителя <strong>от&nbsp;1&nbsp;500&nbsp;₽</strong> за&nbsp;фото</span><div class="cmp-bar" style="width:100%"></div></div>
+        <div class="cmp-row here"><span>Здесь <strong>9&nbsp;₽</strong></span><div class="cmp-bar here" style="width:.6%"></div></div>
+      </div>
+      <div class="cmp-item">
+        <h3 class="h3">Короткий ролик</h3>
+        <div class="cmp-row"><span>У&nbsp;исполнителя <strong>от&nbsp;1&nbsp;500&nbsp;₽</strong></span><div class="cmp-bar" style="width:100%"></div></div>
+        <div class="cmp-row here"><span>Здесь <strong>от&nbsp;40&nbsp;₽</strong></span><div class="cmp-bar here" style="width:2.7%"></div></div>
+      </div>
+      <div class="cmp-item">
+        <h3 class="h3">Бот-автоответчик</h3>
+        <div class="cmp-row"><span>У&nbsp;исполнителя <strong>15–50&nbsp;тыс.&nbsp;₽</strong></span><div class="cmp-bar range" style="width:100%"></div></div>
+        <div class="cmp-row free"><span>Здесь <strong>пошаговая инструкция</strong>, соберёте сами</span><div class="cmp-bar free"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Нейросети -->
+  <section class="sec" id="models" aria-labelledby="h-models">
+    <div class="sec-head">
+      <div>
+        <h2 class="h2" id="h-models">Нейросети внутри</h2>
+        <p class="sub">Подходящую под задачу выбираем сами. Хотите — выберите вручную.</p>
+      </div>
+    </div>
+    <ul class="logos" aria-label="Компании">
+      <li><span class="word">GPT</span>OpenAI</li>
+      <li><img src="../assets/anthropic.svg" alt="">Anthropic</li>
+      <li><img src="../assets/google.svg" alt="">Google</li>
+      <li><img src="../assets/deepseek.svg" alt="">DeepSeek</li>
+      <li><img src="../assets/x.svg" alt="">xAI</li>
+      <li><img src="../assets/perplexity.svg" alt="">Perplexity</li>
+      <li><img src="../assets/bytedance.svg" alt="">ByteDance</li>
+      <li><img src="../assets/kuaishou.svg" alt="">Kuaishou</li>
+      <li><img src="../assets/minimax.svg" alt="">MiniMax</li>
+      <li><img src="../assets/elevenlabs.svg" alt="">ElevenLabs</li>
+    </ul>
+    <h3 class="h3" style="margin-bottom:6px">Лучшие сейчас</h3>
+    <div class="models">
+      <div class="mhead" aria-hidden="true"><span></span><span>нейросеть</span><span>для чего</span><span>цена</span></div>
+      <div class="model"><span class="mlogo" aria-hidden="true">GPT</span><h3>GPT-6 Luna <span class="tag">OpenAI</span></h3><p>Быстрые ответы, письма, посты</p><span class="mp"><span class="rub">0,50&nbsp;₽</span> за&nbsp;сообщение</span></div>
+      <div class="model"><span class="mlogo"><img src="../assets/anthropic.svg" alt=""></span><h3>Claude Sonnet 5.5 <span class="tag">Anthropic</span></h3><p>Длинные тексты, договоры, разбор документов</p><span class="mp"><span class="rub">5,40&nbsp;₽</span> за&nbsp;сообщение</span></div>
+      <div class="model"><span class="mlogo"><img src="../assets/google.svg" alt=""></span><h3>Gemini 3.1 Pro <span class="tag">Google</span></h3><p>Таблицы, фото и&nbsp;большие файлы</p><span class="mp"><span class="rub">6&nbsp;₽</span> за&nbsp;сообщение</span></div>
+      <div class="model"><span class="mlogo"><img src="../assets/deepseek.svg" alt=""></span><h3>DeepSeek V4.1 <span class="tag">DeepSeek</span></h3><p>Недорогие ответы на&nbsp;каждый день</p><span class="mp"><span class="rub">0,80&nbsp;₽</span> за&nbsp;сообщение</span></div>
+      <div class="model"><span class="mlogo"><img src="../assets/google.svg" alt=""></span><h3>Nano Banana 2.1 <span class="tag">Google</span></h3><p>Картинки и&nbsp;правка фото</p><span class="mp"><span class="rub">9&nbsp;₽</span> за&nbsp;картинку</span></div>
+      <div class="model"><span class="mlogo"><img src="../assets/kuaishou.svg" alt=""></span><h3>Kling 2.5 <span class="tag">Kuaishou</span></h3><p>Ролики по&nbsp;описанию и&nbsp;по&nbsp;фото</p><span class="mp"><span class="rub">70&nbsp;₽</span> за&nbsp;ролик</span></div>
+    </div>
+  </section>
+
+  <!-- Научиться самому -->
+  <section class="sec" id="learn" aria-labelledby="h-learn">
+    <div class="sec-head">
+      <div>
+        <h2 class="h2" id="h-learn">Научиться самому</h2>
+        <p class="sub">Пошаговые инструкции и&nbsp;программы — по&nbsp;одному занятию в&nbsp;день.</p>
+      </div>
+    </div>
+    <div class="progs">
+      <div class="prog" style="--c:var(--g-mauve)">
+        <div><h3 class="h3"><a href="#">Рилс каждый день</a></h3><p>Снимать не нужно: ролики для соцсетей из&nbsp;фото и&nbsp;текста.</p></div>
+        <div class="days" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <p class="days-cap">14&nbsp;дней</p>
+      </div>
+      <div class="prog" style="--c:var(--g-rose)">
+        <div><h3 class="h3"><a href="#">Нейрофото</a></h3><p>Портреты, фотосессии и&nbsp;открытки из&nbsp;ваших снимков.</p></div>
+        <div class="days" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i></div>
+        <p class="days-cap">7&nbsp;дней</p>
+      </div>
+      <div class="prog" style="--c:var(--g-butter)">
+        <div><h3 class="h3"><a href="#">Нейросети для селлера</a></h3><p>Фото, карточки и&nbsp;ответы покупателям на&nbsp;Ozon и&nbsp;Wildberries.</p></div>
+        <div class="days" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i></div>
+        <p class="days-cap">10&nbsp;дней</p>
+      </div>
+    </div>
+    <ul class="instr">
+      <li><a href="#">Презентация за&nbsp;15&nbsp;минут</a><span class="lvl" data-l="1"><i><s></s><s></s><s></s></i>легко</span></li>
+      <li><a href="#">Фото товара без фотографа</a><span class="lvl" data-l="1"><i><s></s><s></s><s></s></i>легко</span></li>
+      <li><a href="#">Бот-автоответчик для бизнеса</a><span class="lvl" data-l="2"><i><s></s><s></s><s></s></i>средне</span></li>
+    </ul>
+  </section>
+
+  <!-- Вопросы -->
+  <section class="sec" aria-labelledby="h-faq">
+    <div class="sec-head"><div><h2 class="h2" id="h-faq">Вопросы</h2></div></div>
+    <div class="faq">
+      <details><summary>Нужно ли разбираться в&nbsp;нейросетях?</summary><p>Нет. Выберите готовое задание или напишите задачу своими словами, как написали&nbsp;бы знакомому. Подходящую нейросеть мы подберём сами.</p></details>
+      <details><summary>Как здесь платить?</summary><p>Пополняете баланс в&nbsp;рублях с&nbsp;карты, а&nbsp;за&nbsp;каждую работу списывается её цена. Цену видно на&nbsp;кнопке до&nbsp;запуска. Подписка не&nbsp;нужна.</p></details>
+      <details><summary>Что, если результат не&nbsp;понравится?</summary><p>Нажмите «Ещё вариант» — нейросеть сделает заново. Каждый вариант стоит столько&nbsp;же, сколько первый, цена на&nbsp;кнопке.</p></details>
+      <details><summary>Зачем инструкции, если можно сразу сделать?</summary><p>Готовые задания — для быстрых дел. Инструкции&nbsp;нужны, когда хочется разобраться: например, собрать своего бота-автоответчика вместо заказа у&nbsp;исполнителя.</p></details>
+      <details><summary>Можно ли пользоваться с&nbsp;телефона?</summary><p>Да. Всё работает в&nbsp;браузере телефона, ничего устанавливать не&nbsp;нужно. Фото загружаются прямо из&nbsp;галереи.</p></details>
+    </div>
+  </section>
+
+  <!-- Финал -->
+  <section class="final" aria-labelledby="h-final">
+    <div>
+      <h2 class="h2" id="h-final">Начните с&nbsp;одной маленькой задачи</h2>
+      <p class="sub">После входа — 30&nbsp;₽ в&nbsp;подарок: хватит на&nbsp;60&nbsp;ответов или 3&nbsp;картинки.</p>
+    </div>
+    <form class="composer" onsubmit="return false">
+      <div class="cbody">
+        <div class="cfield">
+          <span class="prompt" aria-hidden="true">›</span>
+          <div class="box">
+            <label class="vh" for="ask2">Попросите нейросеть</label>
+            <textarea id="ask2" rows="2">Напишите вежливый ответ покупателю, который спрашивает про сроки доставки</textarea>
+          </div>
+        </div>
+        <div class="crow">
+          <button type="button" class="cbtn" aria-label="Сказать голосом"><svg class="ico"><use href="#i-mic"/></svg></button>
+          <span class="cprice">≈ <span class="rub">0,50&nbsp;₽</span> за&nbsp;ответ</span>
+          <button type="submit" class="csend" aria-label="Сделать"><svg class="ico" aria-hidden="true"><use href="#i-send"/></svg><span class="lbl-send" aria-hidden="true">Сделать</span></button>
+        </div>
+      </div>
+    </form>
+  </section>
+
+  <footer class="foot">
+    <nav aria-label="Подвал">
+      <a href="#tasks">Готовые задания</a><a href="#learn">Инструкции</a><a href="#prices">Цены</a><a href="#">Для бизнеса</a><a href="#">Поддержка</a><a href="#">Оферта</a><a href="#">Конфиденциальность</a>
+    </nav>
+    <div>
+      <p>© 2026 «ИИ — легко». Цены указаны в&nbsp;рублях.</p>
+      <p>Названия и&nbsp;логотипы нейросетей принадлежат их владельцам.</p>
+    </div>
+  </footer>
+
+</div>
+</main>
+
+<!-- Телефон: нижняя панель -->
+<nav class="tabbar" aria-label="Разделы">
+  <a href="index.html" aria-current="page"><svg class="ico"><use href="#i-home"/></svg>Главная</a>
+  <a href="#demo"><svg class="ico"><use href="#i-chat"/></svg>Чат</a>
+  <a class="create" href="#demo"><svg class="ico"><use href="#i-plus"/></svg>Создать</a>
+  <a href="#tasks"><svg class="ico"><use href="#i-grid"/></svg>Задания</a>
+  <a href="#"><svg class="ico"><use href="#i-image"/></svg>Работы</a>
+</nav>
+
+<script>
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+
+  /* ---------- Демо: запрос печатается → журнал шагов → результат ---------- */
+  const S = {
+    image: {
+      price: '≈ <span class="rub">9&nbsp;₽</span> за&nbsp;картинку',
+      thumb: '../assets/udalit-fon-before.webp', file: 'мандарин.jpg',
+      ask: 'Поставьте этот мандарин на белый фон для карточки товара',
+      model: 'Nano Banana 2.1',
+      steps: ['загружаю ваше фото', 'делаю картинку'],
+      result: { img: '../assets/udalit-fon.webp', alt: 'Готово: мандарин на белом фоне' },
+      cost: '9&nbsp;₽'
+    },
+    text: {
+      price: '≈ <span class="rub">0,50&nbsp;₽</span> за&nbsp;ответ',
+      ask: 'Напишите вежливый ответ на отзыв: «Долго ждала заказ, но торт очень вкусный»',
+      model: 'GPT-6 Luna',
+      steps: ['читаю отзыв', 'пишу ответ'],
+      result: { text: 'Спасибо, что дождались и&nbsp;оценили торт! Простите за&nbsp;задержку: в&nbsp;выходные было много заказов. В&nbsp;следующий раз заранее скажем точный срок. Ждём вас снова!' },
+      cost: '0,50&nbsp;₽'
+    },
+    video: {
+      price: '≈ <span class="rub">40&nbsp;₽</span> за&nbsp;ролик',
+      thumb: '../assets/ozhivit-foto.webp', file: 'прабабушка.jpg',
+      ask: 'Оживите это фото: пусть прабабушка улыбнётся',
+      model: 'Kling 2.5',
+      steps: ['загружаю ваше фото', 'делаю ролик'],
+      result: { img: '../assets/ozhivit-foto.webp', alt: 'Готово: ролик из старого фото', play: 'Прабабушка улыбается' },
+      cost: '40&nbsp;₽'
+    },
+    song: {
+      price: '≈ <span class="rub">32&nbsp;₽</span> за&nbsp;песню',
+      ask: 'Песня на день рождения для мамы Галины: любит дачу и внуков',
+      model: 'MiniMax',
+      steps: ['пишу слова', 'сочиняю музыку'],
+      result: { img: '../assets/pesnya-na-den-rozhdeniya.webp', alt: 'Готово: песня на день рождения', song: 'Галине — с днём рождения' },
+      cost: '32&nbsp;₽'
+    }
+  };
+  const thread = $('#thread'), ask = $('#ask'), ghost = $('#ghost'), field = $('#cfield'), send = $('#csend'), price = $('#cprice');
+  let run = 0;
+  const wait = (ms) => new Promise(r => setTimeout(r, ms));
+  const check = '<svg class="ico" style="width:18px;height:18px" aria-hidden="true"><use href="#i-check"/></svg>';
+
+  const attach = $('#attach');
+  function setAttach(s) {
+    attach.hidden = !s.thumb;
+    if (s.thumb) { attach.querySelector('img').src = s.thumb; attach.querySelector('span').textContent = s.file; }
+  }
+  // строки журнала: [текст, состояние]
+  function lines(s, live) {
+    return [
+      ['подбираю нейросеть', `<span class="tag">${s.model}</span>`],
+      [s.steps[0], '<span class="ok">готово</span>'],
+      [s.steps[1], `<span class="pbar${live ? ' run' : ''}"></span>`],
+      [`готово, списано <span class="rub">${s.cost}</span>`, check, 'done-line']
+    ].map(([t, st, cls]) => `<li${cls ? ` class="${cls}"` : ''}><span>${t}</span><span class="st">${st}</span></li>`);
+  }
+  function outEl(s, develop) {
+    const r = s.result, d = document.createElement('div');
+    d.className = 'out';
+    let body;
+    if (r.text) body = `<p class="answer${develop ? ' develop' : ''}">${r.text}</p>`;
+    else {
+      let ov = '';
+      if (r.play) ov = `<div class="ov-player"><span class="pl"><svg><use href="#i-play"/></svg></span><span class="tl"><b>${r.play}</b><span class="bar"></span></span></div>`;
+      if (r.song) ov = `<div class="ov-player"><span class="pl"><svg><use href="#i-play"/></svg></span><span class="tl"><b>${r.song}</b><span class="wave">${[40,80,55,100,65,35,75,90,45,70,30,60,85,50].map(h => `<i style="height:${h}%"></i>`).join('')}</span></span></div>`;
+      body = `<div class="res${develop ? ' develop' : ''}"><img src="${r.img}" alt="${r.alt}">${ov}</div>`;
+    }
+    d.innerHTML = body + `<div class="acts"><button type="button" class="chip-btn"><svg class="ico"><use href="#i-down"/></svg>Скачать</button><button type="button" class="chip-btn"><svg class="ico"><use href="#i-again"/></svg>Ещё вариант</button></div>`;
+    return d;
+  }
+  function finalState(mode) {
+    const s = S[mode];
+    setAttach(s);
+    field.classList.remove('typing');
+    ask.value = s.ask;
+    const ol = document.createElement('ol'); ol.className = 'log'; ol.innerHTML = lines(s, false).join('');
+    thread.replaceChildren(ol, outEl(s, false));
+    price.innerHTML = s.price;
+  }
+  async function play(mode, speed) {
+    const my = ++run, s = S[mode];
+    price.innerHTML = s.price;
+    if (reduce) return finalState(mode);
+    thread.innerHTML = '<p class="hint">Здесь появится журнал и&nbsp;результат</p>';
+    setAttach(s);
+    field.classList.add('typing'); ask.value = ''; ghost.textContent = '';
+    for (let i = 1; i <= s.ask.length; i++) {
+      if (my !== run) return;
+      ghost.textContent = s.ask.slice(0, i);
+      await wait(speed + (s.ask[i - 1] === ' ' ? speed : 0));
+    }
+    await wait(450); if (my !== run) return;
+    send.classList.add('press'); await wait(160); send.classList.remove('press');
+    field.classList.remove('typing'); ask.value = s.ask; ghost.textContent = '';
+    const ol = document.createElement('ol'); ol.className = 'log';
+    thread.replaceChildren(ol);
+    const L = lines(s, true);
+    for (let i = 0; i < L.length; i++) {
+      ol.insertAdjacentHTML('beforeend', L[i]);
+      ol.lastElementChild.classList.add('in');
+      await wait(i === 2 ? 1400 : 480); if (my !== run) return;
+    }
+    thread.append(outEl(s, true));
+  }
+  $$('.ctabs button').forEach(b => b.addEventListener('click', () => {
+    $$('.ctabs button').forEach(x => x.setAttribute('aria-selected', x === b));
+    play(b.dataset.mode, 22);
+  }));
+  ask.addEventListener('focus', () => { if (field.classList.contains('typing')) { run++; field.classList.remove('typing'); ask.value = ghost.textContent; } });
+  // Запускаем один раз, когда демо видно
+  const io = new IntersectionObserver((es) => { if (es[0].isIntersecting) { io.disconnect(); setTimeout(() => play('image', 42), 500); } }, { threshold: .2 });
+  io.observe($('#demo'));
+
+  /* ---------- Поиск по группам ---------- */
+  const q = $('#q'), groups = $$('.group'), nores = $('#nores');
+  q.addEventListener('input', () => {
+    const v = q.value.trim().toLowerCase().replace(/ё/g, 'е');
+    let n = 0;
+    groups.forEach(g => {
+      const hay = (g.textContent + ' ' + g.dataset.k).toLowerCase().replace(/ё/g, 'е');
+      const ok = !v || v.split(/\s+/).every(w => hay.includes(w));
+      g.hidden = !ok; if (ok) n++;
+    });
+    nores.hidden = n > 0;
+  });
+
+  /* ---------- Задания: фильтр и листание ---------- */
+  const rail = $('#rail');
+  $$('.filters button').forEach(b => b.addEventListener('click', () => {
+    $$('.filters button').forEach(x => x.setAttribute('aria-pressed', x === b));
+    const f = b.dataset.f;
+    $$('.task', rail).forEach(t => t.hidden = f !== 'all' && !t.dataset.c.split(' ').includes(f));
+    rail.scrollTo({ left: 0 });
+  }));
+  $$('.rail-ctl button').forEach(b => b.addEventListener('click', () => {
+    rail.scrollBy({ left: +b.dataset.dir * rail.clientWidth * .8, behavior: reduce ? 'auto' : 'smooth' });
+  }));
+
+  /* ---------- Было / стало ---------- */
+  const ba = $('#ba'), range = $('#baR');
+  range.addEventListener('input', () => ba.style.setProperty('--pos', range.value + '%'));
+  $$('.tool-list button').forEach(b => b.addEventListener('click', () => {
+    $$('.tool-list button').forEach(x => x.setAttribute('aria-selected', x === b));
+    const t = b.dataset.t;
+    $('#baA').src = `../assets/${t}-before.webp`; $('#baA').alt = 'Было: ' + b.dataset.a.toLowerCase();
+    $('#baB').src = `../assets/${t}-after.webp`; $('#baB').alt = 'Стало: ' + b.dataset.b.toLowerCase();
+    $('#baGo').innerHTML = `<span>Загрузить своё фото — <span class="rub">${b.dataset.p}&nbsp;₽</span></span>`;
+    range.value = 50; ba.style.setProperty('--pos', '50%');
+  }));
+
+  /* ---------- Калькулятор ---------- */
+  const forms = {
+    'ответ': ['ответ', 'ответа', 'ответов'], 'картинка': ['картинка', 'картинки', 'картинок'],
+    'песня': ['песня', 'песни', 'песен'], 'ролик': ['ролик', 'ролика', 'роликов']
+  };
+  const plural = (n, f) => { const a = n % 10, b = n % 100; return f[a === 1 && b !== 11 ? 0 : a >= 2 && a <= 4 && (b < 12 || b > 14) ? 1 : 2]; };
+  const fmt = (n) => n.toLocaleString('ru-RU').replace(/\s/g, ' ');
+  $$('.seg button').forEach(b => b.addEventListener('click', () => {
+    $$('.seg button').forEach(x => x.setAttribute('aria-pressed', x === b));
+    const sum = +b.dataset.s;
+    $$('.calc-out div').forEach(d => {
+      const n = Math.floor(sum / +d.querySelector('b').dataset.u);
+      d.querySelector('b').textContent = fmt(n);
+      const sp = d.querySelector('span'); sp.textContent = plural(n, forms[sp.dataset.w]);
+    });
+  }));
+})();
+</script>
+</body>
+</html>
